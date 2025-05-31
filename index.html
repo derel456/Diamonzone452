@@ -1,20 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Block Blast</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Block Blast - by Saya</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Block Blast</h1>
-  <div id="game-board"></div>
-  
-  <div class="controls">
-    <button onclick="placeRandomBlock()">Tempatkan Blok Acak</button>
+  <div class="game-container">
+    <h1 class="title">🧱 Block Blast</h1>
+    <p class="credit">by Saya</p>
+    <div class="play-area" id="playArea">
+      <div class="block" draggable="true" id="block1"></div>
+    </div>
   </div>
-
-  <footer>Game by [Nama Kamu]</footer>
 
   <script src="script.js"></script>
 </body>
