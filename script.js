@@ -1,63 +1,26 @@
-const boardSize = 9;
-const board = document.getElementById('game-board');
-let cells = [];
+const block = document.getElementById('block1');
+const playArea = document.getElementById('playArea');
 
-// Inisialisasi papan
-for (let i = 0; i < boardSize * boardSize; i++) {
-  const cell = document.createElement('div');
-  cell.classList.add('cell');
-  board.appendChild(cell);
-  cells.push(cell);
-}
+let offsetX, offsetY;
 
-// Fungsi acak tempatkan blok 1x1 ke posisi kosong
-function placeRandomBlock() {
-  const emptyIndices = cells
-    .map((cell, index) => (!cell.classList.contains('filled') ? index : null))
-    .filter((i) => i !== null);
+block.addEventListener('dragstart', (e) => {
+  offsetX = e.offsetX;
+  offsetY = e.offsetY;
+});
 
-  if (emptyIndices.length === 0) {
-    alert('Game Over! Tidak ada ruang kosong.');
-    return;
-  }
+playArea.addEventListener('dragover', (e) => {
+  e.preventDefault(); // diperlukan agar bisa drop
+});
 
-  const randomIndex = emptyIndices[Math.floor(Math.random() * emptyIndices.length)];
-  cells[randomIndex].classList.add('filled');
+playArea.addEventListener('drop', (e) => {
+  e.preventDefault();
+  const x = e.clientX - playArea.getBoundingClientRect().left - offsetX;
+  const y = e.clientY - playArea.getBoundingClientRect().top - offsetY;
 
-  checkAndClearLines();
-}
+  // Batasan supaya block nggak keluar
+  const maxX = playArea.clientWidth - block.clientWidth;
+  const maxY = playArea.clientHeight - block.clientHeight;
 
-// Cek apakah ada baris/kolom penuh
-function checkAndClearLines() {
-  // Cek baris
-  for (let row = 0; row < boardSize; row++) {
-    let rowFilled = true;
-    for (let col = 0; col < boardSize; col++) {
-      if (!cells[row * boardSize + col].classList.contains('filled')) {
-        rowFilled = false;
-        break;
-      }
-    }
-    if (rowFilled) {
-      for (let col = 0; col < boardSize; col++) {
-        cells[row * boardSize + col].classList.remove('filled');
-      }
-    }
-  }
-
-  // Cek kolom
-  for (let col = 0; col < boardSize; col++) {
-    let colFilled = true;
-    for (let row = 0; row < boardSize; row++) {
-      if (!cells[row * boardSize + col].classList.contains('filled')) {
-        colFilled = false;
-        break;
-      }
-    }
-    if (colFilled) {
-      for (let row = 0; row < boardSize; row++) {
-        cells[row * boardSize + col].classList.remove('filled');
-      }
-    }
-  }
-         }
+  block.style.left = `${Math.min(Math.max(x, 0), maxX)}px`;
+  block.style.top = `${Math.min(Math.max(y, 0), maxY)}px`;
+});
