@@ -1,20 +1,65 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Block Blast - by Saya</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Ulang Tahun!</title>
+    <!-- Memuat Tailwind CSS untuk styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Memuat font Inter dari Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Menghubungkan file CSS eksternal -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="game-container">
-    <h1 class="title">🧱 Block Blast</h1>
-    <p class="credit">by Saya</p>
-    <div class="play-area" id="playArea">
-      <div class="block" draggable="true" id="block1"></div>
-    </div>
-  </div>
+    <!-- Kontainer utama -->
+    <div class="w-full max-w-2xl mx-auto p-8 bg-white/20 backdrop-blur-md rounded-3xl shadow-2xl text-center border border-white/30 space-y-8">
+        
+        <!-- ============================================== -->
+        <!-- SILAKAN UBAH NAMA DI BAWAH INI -->
+        <!-- ============================================== -->
+        <h1 id="pesan-ultah" class="text-5xl md:text-6xl font-extrabold drop-shadow-lg">
+            Selamat Ulang Tahun, [Nama Anda di Sini]!
+        </h1>
 
-  <script src="script.js"></script>
+        <!-- ============================================== -->
+        <!-- SILAKAN GANTI URL FOTO-FOTO DI BAWAH INI -->
+        <!-- Gunakan 3 URL foto yang berbeda untuk setiap gambar -->
+        <!-- ============================================== -->
+        <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-4">
+            <!-- Foto 1 -->
+            <div class="w-32 h-32 bg-white/30 border-4 border-white/50 rounded-full overflow-hidden shadow-lg transition-transform transform hover:scale-110">
+                <img src="https://placehold.co/150x150/f9a8d4/ffffff?text=FOTO+1" alt="Foto Ulang Tahun 1" class="w-full h-full object-cover">
+            </div>
+            <!-- Foto 2 -->
+            <div class="w-40 h-40 bg-white/30 border-4 border-white/50 rounded-full overflow-hidden shadow-lg transition-transform transform hover:scale-110">
+                <img src="https://placehold.co/200x200/a855f7/ffffff?text=FOTO+2" alt="Foto Ulang Tahun 2" class="w-full h-full object-cover">
+            </div>
+            <!-- Foto 3 -->
+            <div class="w-32 h-32 bg-white/30 border-4 border-white/50 rounded-full overflow-hidden shadow-lg transition-transform transform hover:scale-110">
+                <img src="https://placehold.co/150x150/f9a8d4/ffffff?text=FOTO+3" alt="Foto Ulang Tahun 3" class="w-full h-full object-cover">
+            </div>
+        </div>
+
+        <!-- ============================================== -->
+        <!-- SILAKAN UBAH PESAN PERSONAL DI BAWAH INI -->
+        <!-- ============================================== -->
+        <p id="pesan-personal" class="mt-8 text-xl md:text-2xl font-bold italic drop-shadow-lg animate-pulse">
+            Semoga di usiamu yang baru ini, semua impianmu tercapai. 🎉
+        </p>
+
+        <!-- Tombol untuk Play/Pause musik -->
+        <button id="music-btn" class="px-8 py-3 bg-purple-600 hover:bg-purple-700 text-white font-bold rounded-full shadow-lg transition-transform transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-purple-400">
+            Putar Musik
+        </button>
+    </div>
+
+    <!-- Elemen audio dengan lagu ulang tahun bebas hak cipta -->
+    <audio id="audio-ultah" loop src="https://www.soundjay.com/birthdays/happy-birthday-music-box.mp3"></audio>
+
+    <!-- Menghubungkan file JavaScript eksternal -->
+    <script src="script.js"></script>
 </body>
 </html>
