@@ -23,19 +23,19 @@
             <div class="game-container">
                 <!-- Game Card 1 -->
                 <div class="game-card" onclick="showModal('mobile-legends')">
-                    <img src="https://placehold.co/400x400/800080/ffffff?text=Mobile+Legends" alt="Mobile Legends">
+                    <img src="mlbb.jpg" alt="Mobile Legends">
                     <h3>Mobile Legends</h3>
                 </div>
 
                 <!-- Game Card 2 -->
                 <div class="game-card" onclick="showModal('free-fire')">
-                    <img src="https://placehold.co/400x400/007bff/ffffff?text=Garena+Free+Fire" alt="Garena Free Fire">
+                    <img src="ff.jpg" alt="Garena Free Fire">
                     <h3>Garena Free Fire</h3>
                 </div>
 
                 <!-- Game Card 3 -->
                 <div class="game-card" onclick="showModal('roblox')">
-                    <img src="https://placehold.co/400x400/000000/ffffff?text=Roblox" alt="Roblox">
+                    <img src="robloc.jpg" alt="Roblox">
                     <h3>Roblox</h3>
                 </div>
             </div>
@@ -99,7 +99,7 @@
             priceList.innerHTML = game.prices.map(item => `<p>${item}</p>`).join('');
             
             const whatsappMessage = `Halo, saya ingin top-up ${game.name}!\n\n${game.prices.map(item => `- ${item}`).join('\n')}\n\nMohon dibantu ya.`;
-            whatsappLink.href = `https://wa.me/${myPhoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+            whatsappLink.href = `https://wa.me/${6281410545261}?text=${encodeURIComponent(whatsappMessage)}`;
             
             modal.style.display = 'block';
         }
