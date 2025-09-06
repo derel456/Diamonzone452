@@ -209,7 +209,12 @@ const gamesData = {
         title: "Stumble Guys",
         subtitle: "Kitka Games",
         logo: "https://placehold.co/40x40/505050/ffffff?text=SG",
-        nominals: [] // Data kosong, perlu diisi jika ada
+        nominals: [
+            { amount: "160 Gems", price: "Rp 16.000" },
+            { amount: "800 Gems", price: "Rp 72.000" },
+            { amount: "1600 Gems", price: "Rp 144.000" },
+            { amount: "16000 Gems", price: "Rp 1.440.000" },
+        ]
     },
     "valorant": {
         title: "Valorant",
@@ -240,16 +245,19 @@ const confirmationModal = document.getElementById('confirmation-modal');
 const closeModalButton = document.getElementById('close-modal');
 const modalOkButton = document.getElementById('modal-ok-button');
 const modalTextEl = document.getElementById('modal-text');
+const mobileMenuButton = document.getElementById('mobile-menu-button');
+const mobileMenu = document.getElementById('mobile-menu');
+const closeMenuButton = document.getElementById('close-menu-button');
+const carouselContainer = document.getElementById('carousel-container');
 
 let selectedNominal = null;
 let selectedPaymentMethod = null;
 let selectedGame = null;
+let currentSlide = 0;
 
 // Fungsi untuk mengirim pesan ke WhatsApp
 function sendToWhatsApp(message) {
-    // Ganti nomor ini dengan nomor WhatsApp admin Anda
-    const phoneNumber = "6281234567890"; // Ganti dengan nomor WhatsApp admin
-
+    const phoneNumber = "6281234567890";
     const encodedMessage = encodeURIComponent(message);
     const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
     window.open(whatsappURL, '_blank');
@@ -261,7 +269,6 @@ function showModal(message, isConfirmation = false) {
     confirmationModal.classList.remove('hidden');
     confirmationModal.classList.add('flex', 'items-center', 'justify-center');
 
-    // Menghapus event listener lama sebelum menambahkan yang baru
     const newModalOkButton = modalOkButton.cloneNode(true);
     modalOkButton.parentNode.replaceChild(newModalOkButton, modalOkButton);
     newModalOkButton.addEventListener('click', () => {
@@ -280,9 +287,17 @@ function showModal(message, isConfirmation = false) {
     }
 }
 
+// Fungsi untuk menggeser banner
+function nextSlide() {
+    currentSlide = (currentSlide + 1) % 3;
+    carouselContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+}
+
 // Tambahkan event listener untuk memastikan DOM sudah terisi penuh
 document.addEventListener('DOMContentLoaded', () => {
-    // Fungsi untuk menampilkan halaman pembayaran
+
+    setInterval(nextSlide, 5000);
+
     function showPaymentPage(gameId) {
         const game = gamesData[gameId];
         if (!game) {
@@ -290,17 +305,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         selectedGame = gameId;
-
-        // Update info game di halaman pembayaran
         gameTitleEl.textContent = game.title.toUpperCase();
         gameSubtitleEl.textContent = game.subtitle.toUpperCase();
         gameLogoEl.src = game.logo;
 
-        // Tampilkan nominal
         nominalOptionsEl.innerHTML = '';
         game.nominals.forEach((nominal) => {
             const nominalCard = document.createElement('div');
-            nominalCard.classList.add('payment-option', 'text-center', 'cursor-pointer');
+            nominalCard.classList.add('payment-option', 'text-center', 'cursor-pointer', 'rounded-xl', 'p-4', 'bg-gray-800', 'hover:bg-gray-700', 'transition-colors');
             nominalCard.innerHTML = `
                 <p class="font-bold text-lg">${nominal.amount.toUpperCase()}</p>
                 <p class="text-sm text-gray-400">${nominal.price.toUpperCase()}</p>
@@ -315,22 +327,20 @@ document.addEventListener('DOMContentLoaded', () => {
             nominalOptionsEl.appendChild(nominalCard);
         });
         
-        // Atur kembali pilihan nominal dan pembayaran
         selectedNominal = null;
         selectedPaymentMethod = null;
         document.querySelectorAll('#payment-methods .payment-option').forEach(el => el.classList.remove('selected'));
 
         homePage.classList.add('hidden');
         paymentPage.classList.remove('hidden');
+        window.scrollTo(0, 0); // Gulir ke atas
     }
 
-    // Event listener untuk tombol kembali
     backButton.addEventListener('click', () => {
         homePage.classList.remove('hidden');
         paymentPage.classList.add('hidden');
     });
 
-    // Event listener untuk setiap kartu game
     gameCards.forEach(card => {
         card.addEventListener('click', () => {
             const gameId = card.dataset.game;
@@ -338,7 +348,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Event listener untuk metode pembayaran
     paymentMethodsEl.addEventListener('click', (e) => {
         const target = e.target.closest('.payment-option');
         if (target) {
@@ -348,7 +357,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Event listener untuk tombol "Beli Sekarang"
     buyButton.addEventListener('click', () => {
         const userId = userIdInput.value;
         if (!userId) {
@@ -367,15 +375,22 @@ document.addEventListener('DOMContentLoaded', () => {
         showModal("PESANAN ANDA AKAN DIKIRIMKAN KE WHATSAPP ADMIN. TEKAN OK UNTUK MELANJUTKAN.", true);
     });
 
-    // Event listener untuk menutup modal
     closeModalButton.addEventListener('click', () => {
         confirmationModal.classList.add('hidden');
     });
 
-    // Tutup modal jika klik di luar
     window.addEventListener('click', (e) => {
         if (e.target === confirmationModal) {
             confirmationModal.classList.add('hidden');
         }
+    });
+
+    mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.remove('hidden');
+        mobileMenu.classList.add('flex');
+    });
+
+    closeMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
     });
 });
