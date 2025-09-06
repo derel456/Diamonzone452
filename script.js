@@ -1,162 +1,309 @@
-// Data untuk game
-const popularGames = [
-    { name: "Mobile Legends: Bang Bang", img: "https://via.placeholder.com/100x100?text=MLBB" },
-    { name: "Free Fire", img: "https://via.placeholder.com/100x100?text=FF" },
-    { name: "Roblox", img: "https://via.placeholder.com/100x100?text=Roblox" },
-];
-
-const allGames = [
-    ...popularGames,
-    { name: "FC Mobile", img: "https://via.placeholder.com/100x100?text=FCM" },
-    { name: "Call of Duty Mobile", img: "https://via.placeholder.com/100x100?text=CODM" },
-    { name: "Honkai: Star Rail", img: "https://via.placeholder.com/100x100?text=HSR" },
-    { name: "PUBG Mobile", img: "https://via.placeholder.com/100x100?text=PUBG" },
-    { name: "Genshin Impact", img: "https://via.placeholder.com/100x100?text=Genshin" },
-    { name: "Super Sus", img: "https://via.placeholder.com/100x100?text=Super+Sus" },
-    { name: "Magic Chess", img: "https://via.placeholder.com/100x100?text=MC" },
-    { name: "Honkai Impact 3", img: "https://via.placeholder.com/100x100?text=HI3" },
-    { name: "League of Legends", img: "https://via.placeholder.com/100x100?text=LOL" },
-    { name: "Stumble Guys", img: "https://via.placeholder.com/100x100?text=Stumble" },
-    { name: "Valorant", img: "https://via.placeholder.com/100x100?text=Valorant" },
-];
-
-// Data untuk harga diamond
-const diamondOptions = {
-    'Mobile Legends: Bang Bang': [
-        { amount: '44 (+4 Bonus)', price: '13.000' },
-        { amount: '59 (+6 Bonus)', price: '17.000' },
-        { amount: '85 (+8 Bonus)', price: '24.000' },
-        { amount: '129 (+12 Bonus)', price: '35.750' },
-        { amount: '170 (+16 Bonus)', price: '46.750' },
-        { amount: '240 (+23 Bonus)', price: '65.500' },
-        { amount: '296 (+40 Bonus)', price: '80.500' },
-        { amount: '408 (+41 Bonus)', price: '110.500' },
-        { amount: '568 (+65 Bonus)', price: '152.500' },
-        { amount: '875 (+101 Bonus)', price: '233.000' },
-        { amount: '1171 (+141 Bonus)', price: '313.000' },
-        { amount: '1443 (+166 Bonus)', price: '385.000' },
-    ],
-    'Free Fire': [
-        { amount: '70 Diamonds', price: '10.000' },
-        { amount: '140 Diamonds', price: '20.000' },
-        // Tambahkan opsi lainnya
-    ],
-    'Roblox': [
-        { amount: '800 Robux', price: '100.000' },
-        { amount: '1700 Robux', price: '200.000' },
-        // Tambahkan opsi lainnya
-    ],
+// Data game dan nominal
+const gamesData = {
+    "mobile-legend": {
+        title: "Mobile Legends: Bang Bang",
+        subtitle: "Moonton",
+        logo: "https://placehold.co/40x40/505050/ffffff?text=ML",
+        nominals: [
+            { amount: 50, price: "Rp 15.000" },
+            { amount: 100, price: "Rp 30.000" },
+            { amount: 200, price: "Rp 60.000" },
+            { amount: 500, price: "Rp 150.000" }
+        ]
+    },
+    "free-fire": {
+        title: "Free Fire",
+        subtitle: "Garena",
+        logo: "https://placehold.co/40x40/505050/ffffff?text=FF",
+        nominals: [
+            { amount: 70, price: "Rp 10.000" },
+            { amount: 140, price: "Rp 20.000" },
+            { amount: 355, price: "Rp 50.000" },
+            { amount: 720, price: "Rp 100.000" }
+        ]
+    },
+    "roblox": {
+        title: "Roblox",
+        subtitle: "Roblox Corporation",
+        logo: "https://placehold.co/40x40/505050/ffffff?text=R",
+        nominals: [
+            { amount: 80, price: "Rp 12.000" },
+            { amount: 160, price: "Rp 24.000" },
+            { amount: 400, price: "Rp 60.000" },
+            { amount: 800, price: "Rp 120.000" }
+        ]
+    },
+    // Tambahkan data game lain di sini
+    "fc-mobile": {
+        title: "FC Mobile",
+        subtitle: "EA Sports",
+        logo: "https://placehold.co/40x40/505050/ffffff?text=FC",
+        nominals: [
+            { amount: 100, price: "Rp 15.000" },
+            { amount: 200, price: "Rp 30.000" }
+        ]
+    },
+    "codm": {
+        title: "Call of Duty: Mobile",
+        subtitle: "Activision",
+        logo: "https://placehold.co/40x40/505050/ffffff?text=CODM",
+        nominals: [
+            { amount: 100, price: "Rp 15.000" },
+            { amount: 200, price: "Rp 30.000" }
+        ]
+    },
+    "hok": {
+        title: "Honor of Kings",
+        subtitle: "TiMi Studio Group",
+        logo: "https://placehold.co/40x40/505050/ffffff?text=HoK",
+        nominals: [
+            { amount: 100, price: "Rp 15.000" },
+            { amount: 200, price: "Rp 30.000" }
+        ]
+    },
+    "guardian-tales": {
+        title: "Guardian Tales",
+        subtitle: "Kakao Games",
+        logo: "https://placehold.co/40x40/505050/ffffff?text=GT",
+        nominals: [
+            { amount: 100, price: "Rp 15.000" },
+            { amount: 200, price: "Rp 30.000" }
+        ]
+    },
+    "pubg": {
+        title: "PUBG Mobile",
+        subtitle: "Tencent Games",
+        logo: "https://placehold.co/40x40/505050/ffffff?text=PUBG",
+        nominals: [
+            { amount: 100, price: "Rp 15.000" },
+            { amount: 200, price: "Rp 30.000" }
+        ]
+    },
+    "genshin-impact": {
+        title: "Genshin Impact",
+        subtitle: "miHoYo",
+        logo: "https://placehold.co/40x40/505050/ffffff?text=GI",
+        nominals: [
+            { amount: 100, price: "Rp 15.000" },
+            { amount: 200, price: "Rp 30.000" }
+        ]
+    },
+    "super-sus": {
+        title: "Super Sus",
+        subtitle: "Pigeon Games",
+        logo: "https://placehold.co/40x40/505050/ffffff?text=SS",
+        nominals: [
+            { amount: 100, price: "Rp 15.000" },
+            { amount: 200, price: "Rp 30.000" }
+        ]
+    },
+    "magic-chest": {
+        title: "Magic Chess",
+        subtitle: "Moonton",
+        logo: "https://placehold.co/40x40/505050/ffffff?text=MC",
+        nominals: [
+            { amount: 100, price: "Rp 15.000" },
+            { amount: 200, price: "Rp 30.000" }
+        ]
+    },
+    "honkai-impact-3": {
+        title: "Honkai Impact 3",
+        subtitle: "miHoYo",
+        logo: "https://placehold.co/40x40/505050/ffffff?text=HI3",
+        nominals: [
+            { amount: 100, price: "Rp 15.000" },
+            { amount: 200, price: "Rp 30.000" }
+        ]
+    },
+    "lol": {
+        title: "League of Legends",
+        subtitle: "Riot Games",
+        logo: "https://placehold.co/40x40/505050/ffffff?text=LoL",
+        nominals: [
+            { amount: 100, price: "Rp 15.000" },
+            { amount: 200, price: "Rp 30.000" }
+        ]
+    },
+    "stumble-guys": {
+        title: "Stumble Guys",
+        subtitle: "Kitka Games",
+        logo: "https://placehold.co/40x40/505050/ffffff?text=SG",
+        nominals: [
+            { amount: 100, price: "Rp 15.000" },
+            { amount: 200, price: "Rp 30.000" }
+        ]
+    },
+    "valorant": {
+        title: "Valorant",
+        subtitle: "Riot Games",
+        logo: "https://placehold.co/40x40/505050/ffffff?text=V",
+        nominals: [
+            { amount: 100, price: "Rp 15.000" },
+            { amount: 200, price: "Rp 30.000" }
+        ]
+    }
 };
 
-const whatsappAdmin = '6281234567890'; // Ganti dengan nomor WhatsApp admin Anda
+// Elemen DOM
+const homePage = document.getElementById('home-page');
+const paymentPage = document.getElementById('payment-page');
+const gameCards = document.querySelectorAll('.game-card');
+const backButton = document.getElementById('back-button');
+const gameTitleEl = document.getElementById('game-title');
+const gameSubtitleEl = document.getElementById('game-subtitle');
+const gameLogoEl = document.getElementById('game-logo');
+const nominalOptionsEl = document.getElementById('nominal-options');
+const paymentMethodsEl = document.getElementById('payment-methods');
+const userIdInput = document.getElementById('user-id');
+const buyButton = document.getElementById('buy-button');
+const confirmationModal = document.getElementById('confirmation-modal');
+const closeModalButton = document.getElementById('close-modal');
+const modalOkButton = document.getElementById('modal-ok-button');
+const modalTextEl = document.getElementById('modal-text');
 
+// Carousel elements
+const carouselTrack = document.getElementById('carousel-track');
+const carouselPrev = document.getElementById('carousel-prev');
+const carouselNext = document.getElementById('carousel-next');
+const slides = document.querySelectorAll('.carousel-slide');
+let currentSlide = 0;
+
+let selectedNominal = null;
+let selectedPaymentMethod = null;
 let selectedGame = null;
-let selectedDiamond = null;
 
-// Fungsi untuk render daftar game
-function renderGames(containerSelector, games) {
-    const container = document.querySelector(containerSelector);
-    container.innerHTML = games.map(game => `
-        <div class="game-item" data-game-name="${game.name}">
-            <img src="${game.img}" alt="${game.name}">
-            <p>${game.name}</p>
-        </div>
-    `).join('');
+// Fungsi Carousel
+function updateCarousel() {
+    carouselTrack.style.transform = `translateX(${-currentSlide * 100}%)`;
 }
 
-// Fungsi untuk menampilkan halaman pembelian
-function showPurchasePage(gameName) {
-    selectedGame = gameName;
-    document.querySelector('.game-list-section').classList.add('hidden');
-    document.querySelector('.section-title').classList.add('hidden');
-    document.querySelector('.banner-slider').classList.add('hidden');
-    const purchasePage = document.getElementById('purchase-page');
-    purchasePage.classList.remove('hidden');
-    document.getElementById('game-title').innerText = gameName;
-
-    // Render opsi diamond
-    const diamondContainer = document.getElementById('diamond-options');
-    diamondContainer.innerHTML = '';
-    const options = diamondOptions[gameName] || [];
-    options.forEach(option => {
-        const div = document.createElement('div');
-        div.classList.add('diamond-option');
-        div.dataset.amount = option.amount;
-        div.dataset.price = option.price;
-        div.innerHTML = `
-            <div>${option.amount} Diamonds</div>
-            <div>Rp ${option.price}</div>
-        `;
-        div.addEventListener('click', () => {
-            document.querySelectorAll('.diamond-option').forEach(el => el.classList.remove('selected'));
-            div.classList.add('selected');
-            selectedDiamond = option;
-        });
-        diamondContainer.appendChild(div);
-    });
-}
-
-// Event listener untuk klik game item
-document.addEventListener('DOMContentLoaded', () => {
-    renderGames('.popular-games', popularGames);
-    renderGames('.all-games', allGames);
-
-    document.querySelectorAll('.game-item').forEach(item => {
-        item.addEventListener('click', (e) => {
-            const gameName = e.currentTarget.dataset.gameName;
-            showPurchasePage(gameName);
-        });
-    });
+carouselNext.addEventListener('click', () => {
+    currentSlide = (currentSlide + 1) % slides.length;
+    updateCarousel();
 });
 
-// Fungsi untuk slider banner
-let slideIndex = 1;
-function showSlides(n) {
-    let slides = document.getElementsByClassName("mySlides");
-    if (n > slides.length) { slideIndex = 1 }
-    if (n < 1) { slideIndex = slides.length }
-    for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-    slides[slideIndex - 1].style.display = "block";
-}
+carouselPrev.addEventListener('click', () => {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    updateCarousel();
+});
 
-// Next/previous controls
-function plusSlides(n) {
-    showSlides(slideIndex += n);
-}
-
-// Otomatis ganti slide setiap 5 detik
+// Auto-geser setiap 5 detik
 setInterval(() => {
-    plusSlides(1);
+    currentSlide = (currentSlide + 1) % slides.length;
+    updateCarousel();
 }, 5000);
 
-showSlides(slideIndex);
-
-// Handle form submission untuk WhatsApp
-document.getElementById('purchase-form').addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    const gameId = document.getElementById('game-id').value;
-    const gameServer = document.getElementById('game-server').value;
-    const whatsappNum = document.getElementById('whatsapp-number').value;
-    const totalAmount = document.getElementById('total-amount').value;
-
-    if (!selectedGame || !selectedDiamond || !gameId || !gameServer || !whatsappNum) {
-        alert('Mohon lengkapi semua data.');
+// Fungsi untuk menampilkan halaman pembayaran
+function showPaymentPage(gameId) {
+    const game = gamesData[gameId];
+    if (!game) {
         return;
     }
 
-    const message = `Halo admin Diamond Zone, saya ingin melakukan top up game.
-Game: ${selectedGame}
-ID Game: ${gameId}
-Server: ${gameServer}
-Jumlah Beli: ${totalAmount}
-Pilihan Diamond: ${selectedDiamond.amount} Diamond (Rp ${selectedDiamond.price})
-WhatsApp: ${whatsappNum}`;
+    selectedGame = gameId;
 
-    const encodedMessage = encodeURIComponent(message);
-    const whatsappUrl = `https://wa.me/${whatsappAdmin}?text=${encodedMessage}`;
-    window.location.href = whatsappUrl;
+    // Update info game di halaman pembayaran
+    gameTitleEl.textContent = game.title;
+    gameSubtitleEl.textContent = game.subtitle;
+    gameLogoEl.src = game.logo;
+
+    // Tampilkan nominal
+    nominalOptionsEl.innerHTML = '';
+    game.nominals.forEach((nominal, index) => {
+        const nominalCard = document.createElement('div');
+        nominalCard.classList.add('payment-option', 'text-center', 'cursor-pointer');
+        nominalCard.innerHTML = `
+            <p class="font-bold text-lg">${nominal.amount} Diamond</p>
+            <p class="text-sm text-gray-400">${nominal.price}</p>
+        `;
+        nominalCard.dataset.amount = nominal.amount;
+        nominalCard.dataset.price = nominal.price;
+        nominalCard.addEventListener('click', () => {
+            document.querySelectorAll('#nominal-options .payment-option').forEach(el => el.classList.remove('selected'));
+            nominalCard.classList.add('selected');
+            selectedNominal = nominal;
+        });
+        nominalOptionsEl.appendChild(nominalCard);
+    });
+    
+    // Atur kembali pilihan nominal dan pembayaran
+    selectedNominal = null;
+    selectedPaymentMethod = null;
+    document.querySelectorAll('#payment-methods .payment-option').forEach(el => el.classList.remove('selected'));
+
+    homePage.classList.add('hidden');
+    paymentPage.classList.remove('hidden');
+}
+
+// Event listener untuk tombol kembali
+backButton.addEventListener('click', () => {
+    homePage.classList.remove('hidden');
+    paymentPage.classList.add('hidden');
 });
 
+// Event listener untuk setiap kartu game
+gameCards.forEach(card => {
+    card.addEventListener('click', () => {
+        const gameId = card.dataset.game;
+        showPaymentPage(gameId);
+    });
+});
+
+// Event listener untuk metode pembayaran
+paymentMethodsEl.addEventListener('click', (e) => {
+    const target = e.target.closest('.payment-option');
+    if (target) {
+        document.querySelectorAll('#payment-methods .payment-option').forEach(el => el.classList.remove('selected'));
+        target.classList.add('selected');
+        selectedPaymentMethod = target.dataset.method;
+    }
+});
+
+// Fungsi untuk mengirim pesan ke WhatsApp
+function sendToWhatsApp(message) {
+    // Ganti nomor ini dengan nomor WhatsApp admin Anda
+    const phoneNumber = "6281410545261"; // Ganti dengan nomor WhatsApp admin
+
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+    window.open(whatsappURL, '_blank');
+}
+
+// Event listener untuk tombol "Beli Sekarang"
+buyButton.addEventListener('click', () => {
+    const userId = userIdInput.value;
+    if (!userId) {
+        showModal("Mohon masukkan ID Pengguna Anda.");
+        return;
+    }
+    if (!selectedNominal) {
+        showModal("Mohon pilih nominal top up.");
+        return;
+    }
+    if (!selectedPaymentMethod) {
+        showModal("Mohon pilih metode pembayaran.");
+        return;
+    }
+
+    const game = gamesData[selectedGame];
+    const message = `Halo Admin, saya ingin top up game.\n\nDetail Pesanan:\n- Game: ${game.title}\n- ID Pengguna: ${userId}\n- Nominal: ${selectedNominal.amount} Diamond\n- Harga: ${selectedNominal.price}\n- Pembayaran: ${selectedPaymentMethod.toUpperCase()}\n\nMohon diproses, terima kasih.`;
+    
+    // Tampilkan konfirmasi dan kirim ke WhatsApp
+    showModal("Pesanan Anda akan dikirimkan ke WhatsApp admin. Tekan OK untuk melanjutkan.");
+    modalOkButton.onclick = () => {
+        sendToWhatsApp(message);
+        confirmationModal.classList.add('hidden');
+    };
+});
+
+// Fungsi untuk menampilkan modal
+function showModal(message) {
+    modalTextEl.textContent = message;
+    confirmationModal.classList.remove('hidden');
+    confirmationModal.classList.add('flex', 'items-center', 'justify-center');
+}
+
+// Event listener untuk menutup modal
+closeModalButton.addEventListener('click', () => {
+    confirmationModal.classList.add('hidden');
+});
