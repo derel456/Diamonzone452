@@ -3,301 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diamond Zone - Top Up Game Murah dan Terpercaya</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Diamond Zone - Top Up Game Murah & Terpercaya</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="container">
-    <div class="header">
-        <h1>Diamond Zone</h1>
-        <p>Top Up Game Murah, Cepat, dan Terpercaya</p>
-    </div>
-
-    <div class="nav-menu">
-        <a href="#efef">Free Fire</a>
-        <a href="#ml">Mobile Legends</a>
-        <a href="#roblox">Roblox</a>
-        <a href="#codm">CODM</a>
-        <a href="#hok">HOK</a>
-        <a href="#fc-mobile">FC Mobile</a>
-        <a href="#gt">Guardian Tales</a>
-        <a href="#tutorial">Tutorial</a>
-    </div>
-
-    <section class="popular-games">
-        <h2>Game Terpopuler</h2>
-        <div class="game-list">
-            <a href="#efef" class="game-item">
-                <img src="https://via.placeholder.com/80" alt="Free Fire Logo">
-                <p>Free Fire</p>
-            </a>
-            <a href="#ml" class="game-item">
-                <img src="https://via.placeholder.com/80" alt="Mobile Legends Logo">
-                <p>Mobile Legends</p>
-            </a>
-            <a href="#roblox" class="game-item">
-                <img src="https://via.placeholder.com/80" alt="Roblox Logo">
-                <p>Roblox</p>
-            </a>
+    <header class="navbar">
+        <div class="logo">Diamond Zone</div>
+        <div class="search-bar">
+            <input type="text" placeholder="Cari Game...">
+            <button>🔍</button>
         </div>
-    </section>
-
-    <section class="how-to-buy">
-        <h2 class="section-title">Cara Membeli</h2>
-        <div class="steps-container">
-            <div class="steps">
-                <div class="step">
-                    <span class="icon"><i class="fas fa-user-circle"></i></span>
-                    <div class="step-info">
-                        <h3>Masukkan Data Akun</h3>
-                        <p>Masukkan ID game kamu dengan benar.</p>
-                    </div>
-                </div>
-                <div class="step">
-                    <span class="icon"><i class="fas fa-gem"></i></span>
-                    <div class="step-info">
-                        <h3>Pilih Nominal</h3>
-                        <p>Pilih jumlah diamond yang kamu inginkan.</p>
-                    </div>
-                </div>
-                <div class="step">
-                    <span class="icon"><i class="fas fa-dollar-sign"></i></span>
-                    <div class="step-info">
-                        <h3>Lakukan Pembayaran</h3>
-                        <p>Pilih metode pembayaran yang tersedia.</p>
-                    </div>
-                </div>
-                <div class="step">
-                    <span class="icon"><i class="fas fa-check-circle"></i></span>
-                    <div class="step-info">
-                        <h3>Selesai</h3>
-                        <p>Diamond akan masuk ke akunmu secara otomatis.</p>
-                    </div>
-                </div>
-            </div>
+        <div class="user-menu">
+            <button>ID 🔽</button>
         </div>
-    </section>
+    </header>
 
     <main>
-        <section id="ml" class="game-section">
-            <h2 class="section-title">Mobile Legends</h2>
-            <div class="form-section">
-                <div class="form-group">
-                    <label for="ml-id">1. Masukkan User ID Mobile Legends</label>
-                    <input type="text" id="ml-id" placeholder="Masukkan ID">
+        <section class="banner-slider">
+            <div class="slideshow-container">
+                <div class="mySlides fade">
+                    <img src="https://via.placeholder.com/1200x400?text=Banner+1" style="width:100%">
                 </div>
-                <div class="form-group">
-                    <label>2. Pilih Nominal Diamond</label>
-                    <div class="product-grid">
-                        <div class="product-item"><h4>95 Diamond</h4><p>Rp 27.500</p></div>
-                        <div class="product-item"><h4>170 Diamond</h4><p>Rp 46.000</p></div>
-                        <div class="product-item"><h4>257 Diamond</h4><p>Rp 69.500</p></div>
-                        <div class="product-item"><h4>305 Diamond</h4><p>Rp 80.000</p></div>
-                        <div class="product-item"><h4>500 Diamond</h4><p>Rp 91.000</p></div>
-                        <div class="product-item"><h4>568 Diamond</h4><p>Rp 143.500</p></div>
-                        <div class="product-item"><h4>875 Diamond</h4><p>Rp 230.000</p></div>
-                        <div class="product-item"><h4>1048 Diamond</h4><p>Rp 270.000</p></div>
-                        <div class="product-item"><h4>1159 Diamond</h4><p>Rp 299.500</p></div>
-                    </div>
-                    <div class="product-grid" style="margin-top: 20px;">
-                        <div class="product-item"><h4>Wdp</h4><p>Rp 28.000</p></div>
-                    </div>
+                <div class="mySlides fade">
+                    <img src="https://via.placeholder.com/1200x400?text=Banner+2" style="width:100%">
                 </div>
+                <a class="prev" onclick="plusSlides(-1)">❮</a>
+                <a class="next" onclick="plusSlides(1)">❯</a>
             </div>
         </section>
 
-        <section id="efef" class="game-section">
-            <h2 class="section-title">Free Fire</h2>
-            <div class="form-section">
-                <div class="form-group">
-                    <label for="efef-id">1. Masukkan ID Free Fire</label>
-                    <input type="text" id="efef-id" placeholder="Masukkan ID">
+        <section class="game-list-section">
+            <h2 class="section-title">⭐ Paling Banyak Dibeli</h2>
+            <div class="game-grid popular-games">
                 </div>
-                <div class="form-group">
-                    <label>2. Pilih Nominal Diamond</label>
-                    <div class="product-grid">
-                        <div class="product-item"><h4>5 Diamond</h4><p>Rp 1.000</p></div>
-                        <div class="product-item"><h4>12 Diamond</h4><p>Rp 2.000</p></div>
-                        <div class="product-item"><h4>50 Diamond</h4><p>Rp 8.000</p></div>
-                        <div class="product-item"><h4>70 Diamond</h4><p>Rp 10.000</p></div>
-                        <div class="product-item"><h4>120 Diamond</h4><p>Rp 19.000</p></div>
-                        <div class="product-item"><h4>355 Diamond</h4><p>Rp 48.000</p></div>
-                        <div class="product-item"><h4>720 Diamond</h4><p>Rp 98.000</p></div>
-                        <div class="product-item"><h4>1450 Diamond</h4><p>Rp 201.000</p></div>
-                        <div class="product-item"><h4>2180 Diamond</h4><p>Rp 302.000</p></div>
-                    </div>
-                    <div class="product-grid" style="margin-top: 20px;">
-                        <div class="product-item"><h4>Membership Mingguan Lite</h4><p>Rp 15.000</p></div>
-                        <div class="product-item"><h4>Membership Mingguan Biasa</h4><p>Rp 30.000</p></div>
-                        <div class="product-item"><h4>Membership Bulanan</h4><p>Rp 86.000</p></div>
-                    </div>
+        </section>
+
+        <section class="game-list-section">
+            <h2 class="section-title">🎮 Semua Game</h2>
+            <div class="game-grid all-games">
                 </div>
+        </section>
+
+        <section id="purchase-page" class="hidden">
+            <div class="purchase-container">
+                <h2 id="game-title">Mobile Legends: Bang Bang</h2>
+                <div class="game-info">
+                    <p>✅ Proses 1-60 Detik</p>
+                    <p>📞 Customer Support : 09.00-21.00 WIB</p>
+                    <p>🌏 Region : Indonesia & Global</p>
+                </div>
+
+                <div class="steps-container">
+                    <h3>Langkah-langkah mengisi Diamond:</h3>
+                    <ol>
+                        <li>Masukkan nomor ID dan Server</li>
+                        <li>Pilih jumlah Diamond yang diinginkan</li>
+                        <li>Pilih metode pembayaran yang diinginkan</li>
+                        <li>Masukkan nomor WhatsApp Anda yang AKTIF</li>
+                        <li>Klik Order Now dan selesaikan pembayaran</li>
+                        <li>Silahkan menunggu, Diamond akan masuk secara otomatis ke akun Anda</li>
+                    </ol>
+                    <p class="note">⚠️ Catatan: Jangan gabung nomor ID dan nomor server jadi satu</p>
+                </div>
+
+                <form id="purchase-form">
+                    <div class="input-section">
+                        <h4>1. Masukkan Data Akun Anda</h4>
+                        <input type="text" id="game-id" placeholder="ID" required>
+                        <input type="text" id="game-server" placeholder="Server (Contoh: 1234)" required>
+                    </div>
+
+                    <div class="input-section">
+                        <h4>2. Pilih Nominal yang Ingin Anda Beli</h4>
+                        <div id="diamond-options" class="options-grid">
+                            </div>
+                    </div>
+
+                    <div class="input-section">
+                        <h4>3. Masukkan Jumlah Total</h4>
+                        <input type="number" id="total-amount" value="1" min="1">
+                    </div>
+
+                    <div class="input-section">
+                        <h4>4. Pilih Metode Pembayaran</h4>
+                        </div>
+
+                    <div class="input-section">
+                        <h4>6. No. WhatsApp</h4>
+                        <input type="tel" id="whatsapp-number" placeholder="Masukkan Nomor WhatsApp Anda" required>
+                    </div>
+
+                    <button type="submit" class="cta-button">🛒 Pesan Sekarang!</button>
+                </form>
             </div>
         </section>
 
-        <section id="roblox" class="game-section">
-            <h2 class="section-title">Roblox</h2>
-            <div class="form-section">
-                <div class="form-group">
-                    <label for="roblox-user">1. Masukkan Username Roblox</label>
-                    <input type="text" id="roblox-user" placeholder="Masukkan Username">
-                </div>
-                <div class="form-group">
-                    <label>2. Pilih Nominal Robux Biasa</label>
-                    <div class="product-grid">
-                        <div class="product-item"><h4>400 Robux</h4><p>Rp 85.000</p></div>
-                        <div class="product-item"><h4>800 Robux</h4><p>Rp 159.000</p></div>
-                        <div class="product-item"><h4>1600 Robux</h4><p>Rp 310.000</p></div>
-                        <div class="product-item"><h4>400 Robux</h4><p>Rp 762.000</p></div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label>3. Pilih Nominal Robux Gamepass</label>
-                    <div class="product-grid">
-                        <div class="product-item"><h4>100 Robux</h4><p>Rp 14.000</p></div>
-                        <div class="product-item"><h4>200 Robux</h4><p>Rp 27.000</p></div>
-                        <div class="product-item"><h4>300 Robux</h4><p>Rp 40.000</p></div>
-                        <div class="product-item"><h4>400 Robux</h4><p>Rp 54.000</p></div>
-                        <div class="product-item"><h4>500 Robux</h4><p>Rp 67.000</p></div>
-                        <div class="product-item"><h4>600 Robux</h4><p>Rp 80.000</p></div>
-                        <div class="product-item"><h4>700 Robux</h4><p>Rp 93.000</p></div>
-                        <div class="product-item"><h4>800 Robux</h4><p>Rp 106.000</p></div>
-                        <div class="product-item"><h4>900 Robux</h4><p>Rp 120.000</p></div>
-                        <div class="product-item"><h4>1000 Robux</h4><p>Rp 133.000</p></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="codm" class="game-section">
-            <h2 class="section-title">CODM</h2>
-            <div class="form-section">
-                <div class="form-group">
-                    <label for="codm-id">1. Masukkan ID CODM</label>
-                    <input type="text" id="codm-id" placeholder="Masukkan ID">
-                </div>
-                <div class="form-group">
-                    <label>2. Pilih Nominal Garena Shells</label>
-                    <div class="product-grid">
-                        <div class="product-item"><h4>33 Garena Shells</h4><p>Rp 10.000</p></div>
-                        <div class="product-item"><h4>66 Garena Shells</h4><p>Rp 20.000</p></div>
-                        <div class="product-item"><h4>165 Garena Shells</h4><p>Rp 50.000</p></div>
-                        <div class="product-item"><h4>330 Garena Shells</h4><p>Rp 100.000</p></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="hok" class="game-section">
-            <h2 class="section-title">HOK (Honor of Kings)</h2>
-            <div class="form-section">
-                <div class="form-group">
-                    <label for="hok-id">1. Masukkan ID HOK</label>
-                    <input type="text" id="hok-id" placeholder="Masukkan ID">
-                </div>
-                <div class="form-group">
-                    <label>2. Pilih Nominal Tokens</label>
-                    <div class="product-grid">
-                        <div class="product-item"><h4>16 Tokens</h4><p>Rp 3.000</p></div>
-                        <div class="product-item"><h4>80 + 8 Tokens</h4><p>Rp 15.000</p></div>
-                        <div class="product-item"><h4>240 + 17 Tokens</h4><p>Rp 44.000</p></div>
-                        <div class="product-item"><h4>400 + 32 Tokens</h4><p>Rp 73.000</p></div>
-                        <div class="product-item"><h4>560 + 45 Tokens</h4><p>Rp 102.000</p></div>
-                        <div class="product-item"><h4>800 + 95 Tokens</h4><p>Rp 146.000</p></div>
-                        <div class="product-item"><h4>1200 + 153 Tokens</h4><p>Rp 220.000</p></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="fc-mobile" class="game-section">
-            <h2 class="section-title">FC Mobile</h2>
-            <div class="form-section">
-                <div class="form-group">
-                    <label for="fc-id">1. Masukkan ID FC Mobile</label>
-                    <input type="text" id="fc-id" placeholder="Masukkan ID">
-                </div>
-                <div class="form-group">
-                    <label>2. Pilih Nominal FC Points</label>
-                    <div class="product-grid">
-                        <div class="product-item"><h4>40 FC Point</h4><p>Rp 6.500</p></div>
-                        <div class="product-item"><h4>100 FC Point</h4><p>Rp 16.000</p></div>
-                        <div class="product-item"><h4>520 FC Point</h4><p>Rp 78.000</p></div>
-                        <div class="product-item"><h4>1070 FC Point</h4><p>Rp 156.500</p></div>
-                        <div class="product-item"><h4>2200 FC Point</h4><p>Rp 232.500</p></div>
-                        <div class="product-item"><h4>5750 FC Point</h4><p>Rp 785.000</p></div>
-                        <div class="product-item"><h4>12000 FC Point</h4><p>Rp 1.571.000</p></div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label>3. Pilih Nominal Silver</label>
-                    <div class="product-grid">
-                        <div class="product-item"><h4>39 Silver</h4><p>Rp 6.500</p></div>
-                        <div class="product-item"><h4>99 Silver</h4><p>Rp 16.000</p></div>
-                        <div class="product-item"><h4>499 Silver</h4><p>Rp 78.000</p></div>
-                        <div class="product-item"><h4>999 Silver</h4><p>Rp 156.500</p></div>
-                        <div class="product-item"><h4>1999 Silver</h4><p>Rp 232.500</p></div>
-                        <div class="product-item"><h4>4999 Silver</h4><p>Rp 785.000</p></div>
-                        <div class="product-item"><h4>9999 Silver</h4><p>Rp 1.571.000</p></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="gt" class="game-section">
-            <h2 class="section-title">Guardian Tales</h2>
-            <div class="form-section">
-                <div class="form-group">
-                    <label for="gt-id">1. Masukkan ID Guardian Tales</label>
-                    <input type="text" id="gt-id" placeholder="Masukkan ID">
-                </div>
-                <div class="form-group">
-                    <label>2. Pilih Paket</label>
-                    <div class="product-grid">
-                        <div class="product-item"><h4>Bundle Starter S3</h4><p>Rp 277.000</p></div>
-                        <div class="product-item"><h4>Bundle Special Costume</h4><p>Rp 510.000</p></div>
-                        <div class="product-item"><h4>Bundle Skip Iklan</h4><p>Rp 70.000</p></div>
-                        <div class="product-item"><h4>Paket Special Bulanan</h4><p>Rp 50.000</p></div>
-                    </div>
-                </div>
-            </div>
-        </section>
     </main>
 
-    <section id="tutorial" class="tutorial-section">
-        <h2 class="section-title">Tutorial Cara Membeli</h2>
-        <p>Tonton video di bawah ini untuk panduan langkah demi langkah cara top up di website kami.</p>
-        <iframe class="tutorial-video" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <p style="font-size: 0.8em; color: #888;">*Ganti "YOUR_VIDEO_ID" di kode di atas dengan ID video YouTube kamu sendiri.</p>
-    </section>
-
-    <div class="contact-links">
-        <a href="https://www.instagram.com/diamond_zone45?igsh=MTIyOWpqMnR3NHF1aA==" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.tiktok.com/@diamond.zone35" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
-        <a href="https://wa.me/621410545261" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-    </div>
-
-    <footer class="footer">
-        &copy; 2025 Diamond Zone. All Rights Reserved.
-    </footer>
-</div>
-
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const productItems = document.querySelectorAll('.product-item');
-        productItems.forEach(item => {
-            item.addEventListener('click', () => {
-                const parentGrid = item.closest('.product-grid');
-                if (parentGrid) {
-                    parentGrid.querySelectorAll('.product-item').forEach(p => p.classList.remove('selected'));
-                }
-                item.classList.add('selected');
-            });
-        });
-    });
-</script>
-
+    <script src="script.js"></script>
 </body>
 </html>
