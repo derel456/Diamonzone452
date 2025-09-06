@@ -1,191 +1,124 @@
-/* Gaya dasar & reset */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f2f5;
-    color: #333;
+    font-family: 'Inter', sans-serif;
+    background-color: #0b0f16;
+    color: #fff;
 }
-
-.hidden {
-    display: none;
-}
-
-/* Navbar */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 20px;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: #4CAF50;
-}
-
-/* Banner Slider */
-.banner-slider {
-    padding: 20px;
-}
-
-.slideshow-container {
+.container {
     max-width: 1200px;
-    position: relative;
     margin: auto;
-    border-radius: 10px;
+    padding: 1rem;
+}
+.game-card {
+    background-color: #1a202c;
+    background-image: linear-gradient(145deg, #1a202c, #2a3342);
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.mySlides {
-    display: none;
-}
-
-.mySlides img {
-    width: 100%;
-    border-radius: 10px;
-}
-
-.prev, .next {
+    transition: transform 0.2s, box-shadow 0.2s;
     cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+.game-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4);
+}
+.game-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+.popular-section {
+    background-color: #1a202c;
+    border-radius: 16px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+.payment-container {
+    background-color: #1a202c;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+.payment-option {
+    background-color: #2a3342;
+    border-radius: 8px;
+    padding: 1rem;
+    transition: background-color 0.2s, border 0.2s;
+    border: 2px solid transparent;
+}
+.payment-option:hover {
+    background-color: #3a4555;
+}
+.payment-option.selected {
+    border-color: #4f46e5;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8);
+    backdrop-filter: blur(5px);
+}
+.modal-content {
+    background-color: #1a202c;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #4a4a6e;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 10px;
+    position: relative;
+}
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close-button:hover,
+.close-button:focus {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+.carousel {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    margin-bottom: 2rem;
+}
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+.carousel-slide {
+    min-width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 16px;
+}
+.carousel-button {
     position: absolute;
     top: 50%;
-    width: auto;
-    padding: 16px;
-    margin-top: -22px;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
     color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-}
-
-.next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-}
-
-.prev:hover, .next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-/* Game Grid */
-.game-list-section {
-    padding: 20px;
-}
-
-.section-title {
-    text-align: center;
-    color: #555;
-    margin-bottom: 20px;
-}
-
-.game-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-    gap: 15px;
-}
-
-.game-item {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    padding: 10px;
-    transition: transform 0.2s;
+    padding: 1rem;
+    border-radius: 50%;
     cursor: pointer;
+    z-index: 10;
 }
-
-.game-item:hover {
-    transform: translateY(-5px);
+.carousel-button.left {
+    left: 1rem;
 }
-
-.game-item img {
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    border-radius: 5px;
-}
-
-.game-item p {
-    margin: 5px 0 0;
-    font-size: 14px;
-    font-weight: bold;
-}
-
-/* Purchase Page */
-#purchase-page {
-    padding: 20px;
-    max-width: 800px;
-    margin: 20px auto;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.purchase-container h2 {
-    text-align: center;
-    color: #4CAF50;
-}
-
-.input-section {
-    margin-bottom: 25px;
-    background-color: #f9f9f9;
-    padding: 15px;
-    border-radius: 8px;
-    border: 1px solid #ddd;
-}
-
-.input-section h4 {
-    margin-top: 0;
-    color: #666;
-}
-
-input[type="text"], input[type="number"], input[type="tel"] {
-    width: calc(100% - 20px);
-    padding: 10px;
-    margin-top: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-.options-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 10px;
-}
-
-.diamond-option {
-    background-color: #e8f5e9;
-    padding: 15px;
-    border-radius: 8px;
-    text-align: center;
-    border: 2px solid transparent;
-    cursor: pointer;
-}
-
-.diamond-option:hover, .diamond-option.selected {
-    border-color: #4CAF50;
-    background-color: #c8e6c9;
-}
-
-.cta-button {
-    width: 100%;
-    padding: 15px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 18px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.cta-button:hover {
-    background-color: #45a049;
+.carousel-button.right {
+    right: 1rem;
 }
