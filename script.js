@@ -172,93 +172,6 @@ let selectedNominal = null;
 let selectedPaymentMethod = null;
 let selectedGame = null;
 
-// Fungsi Carousel
-function updateCarousel() {
-    carouselTrack.style.transform = `translateX(${-currentSlide * 100}%)`;
-}
-
-carouselNext.addEventListener('click', () => {
-    currentSlide = (currentSlide + 1) % slides.length;
-    updateCarousel();
-});
-
-carouselPrev.addEventListener('click', () => {
-    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-    updateCarousel();
-});
-
-// Auto-geser setiap 5 detik
-setInterval(() => {
-    currentSlide = (currentSlide + 1) % slides.length;
-    updateCarousel();
-}, 5000);
-
-// Fungsi untuk menampilkan halaman pembayaran
-function showPaymentPage(gameId) {
-    const game = gamesData[gameId];
-    if (!game) {
-        return;
-    }
-
-    selectedGame = gameId;
-
-    // Update info game di halaman pembayaran
-    gameTitleEl.textContent = game.title;
-    gameSubtitleEl.textContent = game.subtitle;
-    gameLogoEl.src = game.logo;
-
-    // Tampilkan nominal
-    nominalOptionsEl.innerHTML = '';
-    game.nominals.forEach((nominal, index) => {
-        const nominalCard = document.createElement('div');
-        nominalCard.classList.add('payment-option', 'text-center', 'cursor-pointer');
-        nominalCard.innerHTML = `
-            <p class="font-bold text-lg">${nominal.amount} Diamond</p>
-            <p class="text-sm text-gray-400">${nominal.price}</p>
-        `;
-        nominalCard.dataset.amount = nominal.amount;
-        nominalCard.dataset.price = nominal.price;
-        nominalCard.addEventListener('click', () => {
-            document.querySelectorAll('#nominal-options .payment-option').forEach(el => el.classList.remove('selected'));
-            nominalCard.classList.add('selected');
-            selectedNominal = nominal;
-        });
-        nominalOptionsEl.appendChild(nominalCard);
-    });
-    
-    // Atur kembali pilihan nominal dan pembayaran
-    selectedNominal = null;
-    selectedPaymentMethod = null;
-    document.querySelectorAll('#payment-methods .payment-option').forEach(el => el.classList.remove('selected'));
-
-    homePage.classList.add('hidden');
-    paymentPage.classList.remove('hidden');
-}
-
-// Event listener untuk tombol kembali
-backButton.addEventListener('click', () => {
-    homePage.classList.remove('hidden');
-    paymentPage.classList.add('hidden');
-});
-
-// Event listener untuk setiap kartu game
-gameCards.forEach(card => {
-    card.addEventListener('click', () => {
-        const gameId = card.dataset.game;
-        showPaymentPage(gameId);
-    });
-});
-
-// Event listener untuk metode pembayaran
-paymentMethodsEl.addEventListener('click', (e) => {
-    const target = e.target.closest('.payment-option');
-    if (target) {
-        document.querySelectorAll('#payment-methods .payment-option').forEach(el => el.classList.remove('selected'));
-        target.classList.add('selected');
-        selectedPaymentMethod = target.dataset.method;
-    }
-});
-
 // Fungsi untuk mengirim pesan ke WhatsApp
 function sendToWhatsApp(message) {
     // Ganti nomor ini dengan nomor WhatsApp admin Anda
@@ -269,41 +182,149 @@ function sendToWhatsApp(message) {
     window.open(whatsappURL, '_blank');
 }
 
-// Event listener untuk tombol "Beli Sekarang"
-buyButton.addEventListener('click', () => {
-    const userId = userIdInput.value;
-    if (!userId) {
-        showModal("Mohon masukkan ID Pengguna Anda.");
-        return;
-    }
-    if (!selectedNominal) {
-        showModal("Mohon pilih nominal top up.");
-        return;
-    }
-    if (!selectedPaymentMethod) {
-        showModal("Mohon pilih metode pembayaran.");
-        return;
-    }
-
-    const game = gamesData[selectedGame];
-    const message = `Halo Admin, saya ingin top up game.\n\nDetail Pesanan:\n- Game: ${game.title}\n- ID Pengguna: ${userId}\n- Nominal: ${selectedNominal.amount} Diamond\n- Harga: ${selectedNominal.price}\n- Pembayaran: ${selectedPaymentMethod.toUpperCase()}\n\nMohon diproses, terima kasih.`;
-    
-    // Tampilkan konfirmasi dan kirim ke WhatsApp
-    showModal("Pesanan Anda akan dikirimkan ke WhatsApp admin. Tekan OK untuk melanjutkan.");
-    modalOkButton.onclick = () => {
-        sendToWhatsApp(message);
-        confirmationModal.classList.add('hidden');
-    };
-});
-
 // Fungsi untuk menampilkan modal
-function showModal(message) {
+function showModal(message, isConfirmation = false) {
     modalTextEl.textContent = message;
     confirmationModal.classList.remove('hidden');
     confirmationModal.classList.add('flex', 'items-center', 'justify-center');
+
+    // Menghapus event listener lama sebelum menambahkan yang baru
+    const newModalOkButton = modalOkButton.cloneNode(true);
+    modalOkButton.parentNode.replaceChild(newModalOkButton, modalOkButton);
+    newModalOkButton.addEventListener('click', () => {
+        confirmationModal.classList.add('hidden');
+    });
+
+    if (isConfirmation) {
+        newModalOkButton.textContent = "OK";
+        newModalOkButton.addEventListener('click', () => {
+            const game = gamesData[selectedGame];
+            const userId = userIdInput.value;
+            const message = `Halo Admin, saya ingin top up game.\n\nDetail Pesanan:\n- Game: ${game.title}\n- ID Pengguna: ${userId}\n- Nominal: ${selectedNominal.amount} Diamond\n- Harga: ${selectedNominal.price}\n- Pembayaran: ${selectedPaymentMethod.toUpperCase()}\n\nMohon diproses, terima kasih.`;
+            sendToWhatsApp(message);
+            confirmationModal.classList.add('hidden');
+        }, { once: true });
+    }
 }
 
-// Event listener untuk menutup modal
-closeModalButton.addEventListener('click', () => {
-    confirmationModal.classList.add('hidden');
+// Tambahkan event listener untuk memastikan DOM sudah terisi penuh
+document.addEventListener('DOMContentLoaded', () => {
+
+    // Fungsi Carousel
+    function updateCarousel() {
+        carouselTrack.style.transform = `translateX(${-currentSlide * 100}%)`;
+    }
+
+    carouselNext.addEventListener('click', () => {
+        currentSlide = (currentSlide + 1) % slides.length;
+        updateCarousel();
+    });
+
+    carouselPrev.addEventListener('click', () => {
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        updateCarousel();
+    });
+
+    // Auto-geser setiap 5 detik
+    setInterval(() => {
+        currentSlide = (currentSlide + 1) % slides.length;
+        updateCarousel();
+    }, 5000);
+
+    // Fungsi untuk menampilkan halaman pembayaran
+    function showPaymentPage(gameId) {
+        const game = gamesData[gameId];
+        if (!game) {
+            return;
+        }
+
+        selectedGame = gameId;
+
+        // Update info game di halaman pembayaran
+        gameTitleEl.textContent = game.title;
+        gameSubtitleEl.textContent = game.subtitle;
+        gameLogoEl.src = game.logo;
+
+        // Tampilkan nominal
+        nominalOptionsEl.innerHTML = '';
+        game.nominals.forEach((nominal, index) => {
+            const nominalCard = document.createElement('div');
+            nominalCard.classList.add('payment-option', 'text-center', 'cursor-pointer');
+            nominalCard.innerHTML = `
+                <p class="font-bold text-lg">${nominal.amount} Diamond</p>
+                <p class="text-sm text-gray-400">${nominal.price}</p>
+            `;
+            nominalCard.dataset.amount = nominal.amount;
+            nominalCard.dataset.price = nominal.price;
+            nominalCard.addEventListener('click', () => {
+                document.querySelectorAll('#nominal-options .payment-option').forEach(el => el.classList.remove('selected'));
+                nominalCard.classList.add('selected');
+                selectedNominal = nominal;
+            });
+            nominalOptionsEl.appendChild(nominalCard);
+        });
+        
+        // Atur kembali pilihan nominal dan pembayaran
+        selectedNominal = null;
+        selectedPaymentMethod = null;
+        document.querySelectorAll('#payment-methods .payment-option').forEach(el => el.classList.remove('selected'));
+
+        homePage.classList.add('hidden');
+        paymentPage.classList.remove('hidden');
+    }
+
+    // Event listener untuk tombol kembali
+    backButton.addEventListener('click', () => {
+        homePage.classList.remove('hidden');
+        paymentPage.classList.add('hidden');
+    });
+
+    // Event listener untuk setiap kartu game
+    gameCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const gameId = card.dataset.game;
+            showPaymentPage(gameId);
+        });
+    });
+
+    // Event listener untuk metode pembayaran
+    paymentMethodsEl.addEventListener('click', (e) => {
+        const target = e.target.closest('.payment-option');
+        if (target) {
+            document.querySelectorAll('#payment-methods .payment-option').forEach(el => el.classList.remove('selected'));
+            target.classList.add('selected');
+            selectedPaymentMethod = target.dataset.method;
+        }
+    });
+
+    // Event listener untuk tombol "Beli Sekarang"
+    buyButton.addEventListener('click', () => {
+        const userId = userIdInput.value;
+        if (!userId) {
+            showModal("Mohon masukkan ID Pengguna Anda.");
+            return;
+        }
+        if (!selectedNominal) {
+            showModal("Mohon pilih nominal top up.");
+            return;
+        }
+        if (!selectedPaymentMethod) {
+            showModal("Mohon pilih metode pembayaran.");
+            return;
+        }
+        
+        showModal("Pesanan Anda akan dikirimkan ke WhatsApp admin. Tekan OK untuk melanjutkan.", true);
+    });
+
+    // Event listener untuk menutup modal
+    closeModalButton.addEventListener('click', () => {
+        confirmationModal.classList.add('hidden');
+    });
+
+    // Tutup modal jika klik di luar
+    window.addEventListener('click', (e) => {
+        if (e.target === confirmationModal) {
+            confirmationModal.classList.add('hidden');
+        }
+    });
 });
