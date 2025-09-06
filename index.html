@@ -3,62 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Top Up Game - Populer dan Lengkap</title>
+    <title>TOP UP GAME - POPULER DAN LENGKAP</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body class="bg-gray-950 text-white">
+<!-- Perubahan: Menambahkan kelas gradasi ke body -->
+<body class="bg-gray-950 text-white uppercase bg-gradient-to-br from-blue-900 via-gray-900 to-yellow-600">
 
     <!-- Halaman Utama -->
     <div id="home-page" class="container">
         <header class="py-6 flex justify-between items-center">
             <div class="flex items-center space-x-2">
-                <img src="https://placehold.co/40x40/6c63ff/ffffff?text=L" class="rounded-full" alt="Logo">
-                <span class="text-2xl font-bold">Top Up Game</span>
+                <img src="https://placehold.co/40x40/fff/000?text=DZ" class="rounded-full" alt="Logo Diamond Zone">
+                <span class="text-2xl font-bold text-white">DIAMOND ZONE</span>
             </div>
             <nav class="space-x-4 hidden md:flex">
-                <a href="#" class="hover:text-purple-400 transition-colors">Home</a>
-                <a href="#" class="hover:text-purple-400 transition-colors">Top Up</a>
-                <a href="#" class="hover:text-purple-400 transition-colors">Voucher</a>
-                <a href="#" class="hover:text-purple-400 transition-colors">Bantuan</a>
+                <a href="#" class="hover:text-yellow-400 transition-colors">HOME</a>
+                <a href="#" class="hover:text-yellow-400 transition-colors">TOP UP</a>
+                <a href="#" class="hover:text-yellow-400 transition-colors">CARA PEMBELIAN</a>
+                <a href="#" class="hover:text-yellow-400 transition-colors">TENTANG KAMI</a>
+                <a href="#" class="hover:text-yellow-400 transition-colors">SOSIAL MEDIA</a>
             </nav>
-            <button class="bg-purple-600 hover:bg-purple-700 transition-colors px-4 py-2 rounded-full font-semibold md:hidden">Menu</button>
+            <button class="bg-gradient-to-r from-blue-500 to-yellow-500 hover:from-blue-600 hover:to-yellow-600 transition-all px-4 py-2 rounded-full font-semibold md:hidden">MENU</button>
         </header>
 
-        <!-- Carousel Banner -->
-        <div class="carousel relative">
-            <div class="carousel-track" id="carousel-track">
-                <img src="https://placehold.co/1200x400/2f3640/ffffff?text=Banner+1" class="carousel-slide" alt="Banner 1">
-                <img src="https://placehold.co/1200x400/2f3640/ffffff?text=Banner+2" class="carousel-slide" alt="Banner 2">
-                <img src="https://placehold.co/1200x400/2f3640/ffffff?text=Banner+3" class="carousel-slide" alt="Banner 3">
+        <!-- Carousel Banner dengan Animasi -->
+        <div class="relative w-full h-auto rounded-xl overflow-hidden shadow-2xl">
+            <div class="carousel-container relative w-full h-full">
+                <!-- Tambahkan animasi pada banner -->
+                <div class="absolute inset-0 w-full h-full z-10 bg-gradient-to-r from-blue-500 to-yellow-500 opacity-20 animate-pulse"></div>
+                <img id="main-banner" src="https://placehold.co/1200x400/2f3640/ffffff?text=BANNER" class="w-full h-full object-cover rounded-xl" alt="BANNER UTAMA">
             </div>
-            <button class="carousel-button left" id="carousel-prev">&#10094;</button>
-            <button class="carousel-button right" id="carousel-next">&#10095;</button>
+            <!-- Anda bisa menambahkan overlay teks di sini -->
+            <div class="absolute inset-0 flex items-center justify-center z-20">
+                <div class="text-center p-4">
+                    <h1 class="text-4xl sm:text-5xl font-extrabold text-white drop-shadow-lg">SELAMAT DATANG DI DIAMOND ZONE</h1>
+                    <p class="mt-2 text-xl sm:text-2xl font-medium text-gray-200 drop-shadow-md">TOP UP GAME CEPAT & TERPERCAYA</p>
+                </div>
+            </div>
         </div>
 
         <!-- Bagian Populer Sekarang -->
-        <section class="popular-section">
-            <h2 class="text-2xl font-bold mb-4">Populer Sekarang</h2>
+        <section class="popular-section mt-8">
+            <h2 class="text-2xl font-bold mb-4 text-white">POPULER SEKARANG</h2>
             <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
                 <div class="game-card" data-game="mobile-legend">
-                    <img src="https://placehold.co/300x150/505050/ffffff?text=Mobile+Legends" alt="Mobile Legends">
+                    <img src="https://placehold.co/300x150/505050/ffffff?text=MOBILE+LEGENDS" alt="MOBILE LEGENDS">
                     <div class="p-3 text-center">
-                        <h3 class="font-semibold">Mobile Legends</h3>
+                        <h3 class="font-semibold">MOBILE LEGENDS</h3>
                     </div>
                 </div>
                 <div class="game-card" data-game="free-fire">
-                    <img src="https://placehold.co/300x150/505050/ffffff?text=Free+Fire" alt="Free Fire">
+                    <img src="https://placehold.co/300x150/505050/ffffff?text=FREE+FIRE" alt="FREE FIRE">
                     <div class="p-3 text-center">
-                        <h3 class="font-semibold">Free Fire</h3>
+                        <h3 class="font-semibold">FREE FIRE</h3>
                     </div>
                 </div>
                 <div class="game-card" data-game="roblox">
-                    <img src="https://placehold.co/300x150/505050/ffffff?text=Roblox" alt="Roblox">
+                    <img src="https://placehold.co/300x150/505050/ffffff?text=ROBLOX" alt="ROBLOX">
                     <div class="p-3 text-center">
-                        <h3 class="font-semibold">Roblox</h3>
+                        <h3 class="font-semibold">ROBLOX</h3>
                     </div>
                 </div>
             </div>
@@ -66,30 +73,30 @@
 
         <!-- Bagian Semua Game -->
         <section class="mb-8">
-            <h2 class="text-2xl font-bold mb-4">Semua Game</h2>
+            <h2 class="text-2xl font-bold mb-4 text-white">SEMUA GAME</h2>
             <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 gap-4">
                 <div class="game-card" data-game="mobile-legend">
-                    <img src="https://placehold.co/300x150/505050/ffffff?text=Mobile+Legends" alt="Mobile Legends">
+                    <img src="https://placehold.co/300x150/505050/ffffff?text=MOBILE+LEGENDS" alt="MOBILE LEGENDS">
                     <div class="p-3 text-center">
-                        <h3 class="font-semibold">Mobile Legends</h3>
+                        <h3 class="font-semibold">MOBILE LEGENDS</h3>
                     </div>
                 </div>
                 <div class="game-card" data-game="free-fire">
-                    <img src="https://placehold.co/300x150/505050/ffffff?text=Free+Fire" alt="Free Fire">
+                    <img src="https://placehold.co/300x150/505050/ffffff?text=FREE+FIRE" alt="FREE FIRE">
                     <div class="p-3 text-center">
-                        <h3 class="font-semibold">Free Fire</h3>
+                        <h3 class="font-semibold">FREE FIRE</h3>
                     </div>
                 </div>
                 <div class="game-card" data-game="roblox">
-                    <img src="https://placehold.co/300x150/505050/ffffff?text=Roblox" alt="Roblox">
+                    <img src="https://placehold.co/300x150/505050/ffffff?text=ROBLOX" alt="ROBLOX">
                     <div class="p-3 text-center">
-                        <h3 class="font-semibold">Roblox</h3>
+                        <h3 class="font-semibold">ROBLOX</h3>
                     </div>
                 </div>
                 <div class="game-card" data-game="fc-mobile">
-                    <img src="https://placehold.co/300x150/505050/ffffff?text=FC+Mobile" alt="FC Mobile">
+                    <img src="https://placehold.co/300x150/505050/ffffff?text=FC+MOBILE" alt="FC MOBILE">
                     <div class="p-3 text-center">
-                        <h3 class="font-semibold">FC Mobile</h3>
+                        <h3 class="font-semibold">FC MOBILE</h3>
                     </div>
                 </div>
                 <div class="game-card" data-game="codm">
@@ -105,9 +112,9 @@
                     </div>
                 </div>
                 <div class="game-card" data-game="guardian-tales">
-                    <img src="https://placehold.co/300x150/505050/ffffff?text=Guardian+Tales" alt="Guardian Tales">
+                    <img src="https://placehold.co/300x150/505050/ffffff?text=GUARDIAN+TALES" alt="GUARDIAN TALES">
                     <div class="p-3 text-center">
-                        <h3 class="font-semibold">Guardian Tales</h3>
+                        <h3 class="font-semibold">GUARDIAN TALES</h3>
                     </div>
                 </div>
                 <div class="game-card" data-game="pubg">
@@ -117,45 +124,45 @@
                     </div>
                 </div>
                 <div class="game-card" data-game="genshin-impact">
-                    <img src="https://placehold.co/300x150/505050/ffffff?text=Genshin+Impact" alt="Genshin Impact">
+                    <img src="https://placehold.co/300x150/505050/ffffff?text=GENSHIN+IMPACT" alt="GENSHIN IMPACT">
                     <div class="p-3 text-center">
-                        <h3 class="font-semibold">Genshin Impact</h3>
+                        <h3 class="font-semibold">GENSHIN IMPACT</h3>
                     </div>
                 </div>
                 <div class="game-card" data-game="super-sus">
-                    <img src="https://placehold.co/300x150/505050/ffffff?text=Super+Sus" alt="Super Sus">
+                    <img src="https://placehold.co/300x150/505050/ffffff?text=SUPER+SUS" alt="SUPER SUS">
                     <div class="p-3 text-center">
-                        <h3 class="font-semibold">Super Sus</h3>
+                        <h3 class="font-semibold">SUPER SUS</h3>
                     </div>
                 </div>
                 <div class="game-card" data-game="magic-chest">
-                    <img src="https://placehold.co/300x150/505050/ffffff?text=Magic+Chest" alt="Magic Chest">
+                    <img src="https://placehold.co/300x150/505050/ffffff?text=MAGIC+CHEST" alt="MAGIC CHEST">
                     <div class="p-3 text-center">
-                        <h3 class="font-semibold">Magic Chest</h3>
+                        <h3 class="font-semibold">MAGIC CHEST</h3>
                     </div>
                 </div>
                 <div class="game-card" data-game="honkai-impact-3">
-                    <img src="https://placehold.co/300x150/505050/ffffff?text=Honkai+Impact+3" alt="Honkai Impact 3">
+                    <img src="https://placehold.co/300x150/505050/ffffff?text=HI3" alt="HONKAI IMPACT 3">
                     <div class="p-3 text-center">
-                        <h3 class="font-semibold">Honkai Impact 3</h3>
+                        <h3 class="font-semibold">HONKAI IMPACT 3</h3>
                     </div>
                 </div>
                 <div class="game-card" data-game="lol">
-                    <img src="https://placehold.co/300x150/505050/ffffff?text=LOL" alt="League of Legends">
+                    <img src="https://placehold.co/300x150/505050/ffffff?text=LOL" alt="LEAGUE OF LEGENDS">
                     <div class="p-3 text-center">
                         <h3 class="font-semibold">LOL</h3>
                     </div>
                 </div>
                 <div class="game-card" data-game="stumble-guys">
-                    <img src="https://placehold.co/300x150/505050/ffffff?text=Stumble+Guys" alt="Stumble Guys">
+                    <img src="https://placehold.co/300x150/505050/ffffff?text=SG" alt="STUMBLE GUYS">
                     <div class="p-3 text-center">
-                        <h3 class="font-semibold">Stumble Guys</h3>
+                        <h3 class="font-semibold">STUMBLE GUYS</h3>
                     </div>
                 </div>
                 <div class="game-card" data-game="valorant">
-                    <img src="https://placehold.co/300x150/505050/ffffff?text=Valorant" alt="Valorant">
+                    <img src="https://placehold.co/300x150/505050/ffffff?text=V" alt="VALORANT">
                     <div class="p-3 text-center">
-                        <h3 class="font-semibold">Valorant</h3>
+                        <h3 class="font-semibold">VALORANT</h3>
                     </div>
                 </div>
             </div>
@@ -166,11 +173,11 @@
     <!-- Halaman Pembayaran -->
     <div id="payment-page" class="container hidden">
         <header class="py-6 flex justify-between items-center">
-            <button id="back-button" class="text-purple-400 hover:text-purple-300 transition-colors">
-                &larr; Kembali
+            <button id="back-button" class="text-white hover:text-yellow-400 transition-colors">
+                &larr; KEMBALI
             </button>
             <div class="flex items-center space-x-2">
-                <img id="game-logo" src="" class="rounded-full w-10 h-10" alt="Game Logo">
+                <img id="game-logo" src="" class="rounded-full w-10 h-10" alt="LOGO GAME">
                 <div>
                     <h1 id="game-title" class="text-2xl font-bold"></h1>
                     <p id="game-subtitle" class="text-sm text-gray-400"></p>
@@ -180,22 +187,22 @@
         </header>
 
         <main class="payment-container mt-4">
-            <h2 class="text-xl font-semibold mb-4">Top Up Diamond</h2>
+            <h2 class="text-xl font-semibold mb-4 text-white">TOP UP DIAMOND</h2>
 
             <!-- Langkah 1: Masukkan Data Akun -->
             <div class="mb-6">
                 <div class="flex items-center space-x-2 text-gray-400">
-                    <span class="bg-purple-600 rounded-full w-6 h-6 flex items-center justify-center text-white">1</span>
-                    <span class="font-medium">Masukkan Data Akun</span>
+                    <span class="bg-blue-600 rounded-full w-6 h-6 flex items-center justify-center text-white">1</span>
+                    <span class="font-medium">MASUKKAN DATA AKUN</span>
                 </div>
-                <input type="text" id="user-id" placeholder="Masukkan ID Pengguna" class="mt-2 w-full bg-gray-700 text-white p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600">
+                <input type="text" id="user-id" placeholder="MASUKKAN ID PENGGUNA" class="mt-2 w-full bg-gray-700 text-white p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600">
             </div>
 
             <!-- Langkah 2: Pilih Nominal -->
             <div class="mb-6">
                 <div class="flex items-center space-x-2 text-gray-400">
-                    <span class="bg-purple-600 rounded-full w-6 h-6 flex items-center justify-center text-white">2</span>
-                    <span class="font-medium">Pilih Nominal</span>
+                    <span class="bg-blue-600 rounded-full w-6 h-6 flex items-center justify-center text-white">2</span>
+                    <span class="font-medium">PILIH NOMINAL</span>
                 </div>
                 <div id="nominal-options" class="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-2">
                     <!-- Nominal akan diisi oleh JavaScript -->
@@ -205,8 +212,8 @@
             <!-- Langkah 3: Pilih Pembayaran -->
             <div class="mb-6">
                 <div class="flex items-center space-x-2 text-gray-400">
-                    <span class="bg-purple-600 rounded-full w-6 h-6 flex items-center justify-center text-white">3</span>
-                    <span class="font-medium">Pilih Pembayaran</span>
+                    <span class="bg-blue-600 rounded-full w-6 h-6 flex items-center justify-center text-white">3</span>
+                    <span class="font-medium">PILIH PEMBAYARAN</span>
                 </div>
                 <div id="payment-methods" class="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-2">
                     <div class="payment-option text-center cursor-pointer" data-method="gopay">
@@ -224,8 +231,8 @@
                 </div>
             </div>
 
-            <button id="buy-button" class="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-4 rounded-lg transition-colors">
-                Beli Sekarang
+            <button id="buy-button" class="w-full bg-gradient-to-r from-blue-500 to-yellow-500 hover:from-blue-600 hover:to-yellow-600 text-white font-bold py-3 px-4 rounded-lg transition-colors">
+                BELI SEKARANG
             </button>
         </main>
     </div>
@@ -234,9 +241,9 @@
     <div id="confirmation-modal" class="modal hidden">
         <div class="modal-content text-center">
             <span class="close-button" id="close-modal">&times;</span>
-            <h3 class="text-lg font-bold mb-4">Konfirmasi Pembelian</h3>
+            <h3 class="text-lg font-bold mb-4 text-white">KONFIRMASI PEMBELIAN</h3>
             <p id="modal-text"></p>
-            <button id="modal-ok-button" class="mt-4 bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-lg">OK</button>
+            <button id="modal-ok-button" class="mt-4 bg-gradient-to-r from-blue-500 to-yellow-500 hover:from-blue-600 hover:to-yellow-600 text-white font-bold py-2 px-4 rounded-lg">OK</button>
         </div>
     </div>
 
