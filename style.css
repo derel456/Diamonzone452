@@ -1,74 +1,73 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
-body {
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #FFD700 0%, #00BFFF 100%);
-    background-size: 400% 400%;
-    animation: gradientAnimation 15s ease infinite;
-    color: #e2e8f0;
-    min-height: 100vh;
-}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 
-@keyframes gradientAnimation {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f3f4f6;
+    color: #1f2937;
 }
 
 .container {
-    max-width: 1000px;
+    max-width: 1200px;
 }
 
 .game-card {
-    background: rgba(30, 41, 59, 0.7);
-    border: 2px solid rgba(126, 34, 206, 0.5);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-    backdrop-filter: blur(10px);
+    background-color: #e5e7eb;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 2px solid transparent;
+    border-radius: 1rem;
 }
 
 .game-card:hover {
-    transform: translateY(-8px) scale(1.03);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    border-color: #6d28d9;
 }
 
 .btn-payment {
-    background: linear-gradient(90deg, #6d28d9, #9333ea);
-    transition: all 0.3s ease;
+    background-color: #ffc107;
+    color: #0d3b66;
+    transition: background-color 0.2s, transform 0.2s;
 }
 
 .btn-payment:hover {
-    background: linear-gradient(90deg, #7e22ce, #a855f7);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 15px rgba(126, 34, 206, 0.5);
+    background-color: #f5b000;
+    transform: scale(1.02);
 }
 
 .input-field {
-    background-color: rgba(30, 41, 59, 0.8);
-    border: 1px solid rgba(126, 34, 206, 0.5);
-    color: #e2e8f0;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
 }
 
-.input-field:focus {
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(126, 34, 206, 0.5);
+.nominal-item {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid transparent;
+    transition: background-color 0.2s, border-color 0.2s;
 }
 
-.nominal-btn {
-    background: rgba(30, 41, 59, 0.7);
-    border: 1px solid rgba(126, 34, 206, 0.5);
-    transition: transform 0.2s ease, background-color 0.2s ease;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
+.nominal-item.selected {
+    background-color: rgba(109, 40, 217, 0.5);
+    border-color: #6d28d9;
 }
 
-.nominal-btn.active, .nominal-btn:hover {
-    background: #9333ea;
-    border-color: #9333ea;
-    transform: scale(1.05);
+#mobile-menu {
+    transition: transform 0.3s ease-in-out;
 }
 
-.hidden {
-    display: none;
+/* New styles for the new design */
+.popular-games-section {
+    background-color: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.all-games-section {
+    background: linear-gradient(135deg, #a0aec0 0%, #4299e1 100%);
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.all-games-section .game-card {
+    background-color: rgba(255, 255, 255, 0.2);
 }
