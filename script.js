@@ -18,7 +18,7 @@ const totalBanners = 3;
 
 const games = {
     "Mobile Legend": {
-        logo: "https://placehold.co/200x250/312e81/ffffff?text=MLBB",
+        logo: "ml1.jpg",
         nominals: [
             { amount: '95 Diamond', price: 'Rp 27.500' },
             { amount: '170 Diamond', price: 'Rp 46.000' },
@@ -33,7 +33,7 @@ const games = {
         ]
     },
     "Free Fire": {
-        logo: "https://placehold.co/200x250/dc2626/ffffff?text=Free+Fire",
+        logo: "ff1.jpg",
         nominals: [
             { amount: '5 Diamond', price: 'Rp 1.000' },
             { amount: '12 Diamond', price: 'Rp 2.000' },
@@ -50,7 +50,7 @@ const games = {
         ]
     },
     "Roblox": {
-        logo: "https://placehold.co/200x250/2563eb/ffffff?text=Roblox",
+        logo: "roblox1.jpg",
         nominals: [
             { amount: '400 Robux (Biasa)', price: 'Rp 85.000' },
             { amount: '800 Robux (Biasa)', price: 'Rp 159.000' },
@@ -69,7 +69,7 @@ const games = {
         ]
     },
     "CODM": {
-        logo: "https://placehold.co/200x250/1f2937/ffffff?text=CODM",
+        logo: "cod1.jpg",
         nominals: [
             { amount: '33 Garena shells', price: 'Rp 10.000' },
             { amount: '66 Garena shells', price: 'Rp 20.000' },
@@ -78,7 +78,7 @@ const games = {
         ]
     },
     "HOK": {
-        logo: "https://placehold.co/200x250/991b1b/ffffff?text=HOK",
+        logo: "hok1.jpg",
         nominals: [
             { amount: '16 Tokens', price: 'Rp 3.000' },
             { amount: '80 + 8 Tokens', price: 'Rp 15.000' },
@@ -90,7 +90,7 @@ const games = {
         ]
     },
     "Fc Mobile": {
-        logo: "https://placehold.co/200x250/16a34a/ffffff?text=FC+Mobile",
+        logo: "fc1.jpg",
         nominals: [
             { amount: '40 FC Point', price: 'Rp 6.500' },
             { amount: '100 FC Point', price: 'Rp 16.000' },
@@ -109,7 +109,7 @@ const games = {
         ]
     },
     "Guardian Tales": {
-        logo: "https://placehold.co/200x250/f59e0b/ffffff?text=Guardian+Tales",
+        logo: "guardian1.jpg",
         nominals: [
             { amount: 'Bundle starter s3', price: 'Rp 277.000' },
             { amount: 'Bundle special costume', price: 'Rp 510.000' },
@@ -118,7 +118,7 @@ const games = {
         ]
     },
     "PUBG": {
-        logo: "https://placehold.co/200x250/334155/ffffff?text=PUBG",
+        logo: "pubg1.jpg",
         nominals: [
             { amount: '60 UC', price: 'Rp 14.500' },
             { amount: '120 UC', price: 'Rp 29.000' },
@@ -131,7 +131,7 @@ const games = {
         ]
     },
     "Super Sus": {
-        logo: "https://placehold.co/200x250/065f46/ffffff?text=Super+Sus",
+        logo: "super1.jpg",
         nominals: [
             { amount: '250 Gem', price: 'Rp 9.000' },
             { amount: '800 Gem', price: 'Rp 14.000' },
@@ -145,7 +145,7 @@ const games = {
         ]
     },
     "Magic Chess": {
-        logo: "https://placehold.co/200x250/94a3b8/ffffff?text=Magic+Chess",
+        logo: "magic1.jpg",
         nominals: [
             { amount: '12 Diamond', price: 'Rp 3.000' },
             { amount: '28 Diamond', price: 'Rp 6.000' },
@@ -164,7 +164,7 @@ const games = {
         ]
     },
     "Genshin Impact": {
-        logo: "https://placehold.co/200x250/6b21a8/ffffff?text=Genshin",
+        logo: "genshin1.jpg",
         nominals: [
             { amount: '60 Crystal', price: 'Rp 13.000' },
             { amount: '330 Crystal', price: 'Rp 59.000' },
@@ -175,7 +175,7 @@ const games = {
         ]
     },
     "Honkai Impact 3": {
-        logo: "https://share.google/images/xXmNIYPFQUmoD2kSF",
+        logo: "honkai1.jpg",
         nominals: [
             { amount: '65 Crystal', price: 'Rp 15.000' },
             { amount: '330 Crystal', price: 'Rp 74.000' },
@@ -188,7 +188,7 @@ const games = {
         ]
     },
     "LOL": {
-        logo: "https://placehold.co/200x250/5b21b6/ffffff?text=LOL",
+        logo: "lol1.jpg",
         nominals: [
             { amount: '575 RP', price: 'Rp 58.000' },
             { amount: '2800 RP', price: 'Rp 267.000' },
@@ -197,7 +197,7 @@ const games = {
         ]
     },
     "Stumble Guys": {
-        logo: "https://placehold.co/200x250/fde047/000000?text=Stumble+Guys",
+        logo: "stumble1.jpg",
         nominals: [
                 { amount: '250 Gems', price: 'Rp 11.000' },
                 { amount: '800 Gems', price: 'Rp 25.000' },
@@ -205,7 +205,7 @@ const games = {
             ]
     },
     "Valorant": {
-        logo: "https://placehold.co/200x250/991b1b/ffffff?text=Valorant",
+        logo: "valo1.jpg",
         nominals: [
             { amount: '475 Points', price: 'Rp 55.000' },
             { amount: '1000 Points', price: 'Rp 112.000' },
