@@ -6,235 +6,185 @@
     <title>Diamond Zone - Top Up Game</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
-    <style>
-      .icon-image {
-        width: 3rem;
-        height: 3rem;
-      }
-    </style>
 </head>
-<body class="bg-animated font-sans">
-    <header class="bg-gray-900 py-4 fixed top-0 left-0 right-0 z-50 shadow-lg bg-opacity-80 backdrop-blur-md">
-        <div class="container mx-auto px-4 flex justify-between items-center">
-            <h1 class="text-2xl font-bold text-teal-400">Diamond Zone</h1>
-            <nav class="hidden md:flex space-x-6 text-gray-300">
-                <a href="#home" class="hover:text-white transition-colors">Beranda</a>
-                <a href="#games" class="hover:text-white transition-colors">Top Up</a>
-                <a href="#about" class="hover:text-white transition-colors">Tentang Kami</a>
-            </nav>
-            <div class="md:hidden flex items-center">
-                <button id="mobile-menu-button" class="text-gray-300 hover:text-white focus:outline-none">
-                    <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
-                </button>
-            </div>
+<body class="p-4 sm:p-8">
+
+    <!-- Navbar -->
+    <nav class="container mx-auto py-4 flex justify-between items-center relative z-10">
+        <h1 class="text-2xl sm:text-3xl font-bold text-white uppercase">Diamond Zone</h1>
+        <div class="hidden sm:flex space-x-6 text-gray-300">
+            <a href="#how-to-buy" class="hover:text-white transition-colors">CARA PEMBELIAN</a>
+            <a href="#about-us" class="hover:text-white transition-colors">TENTANG KAMI</a>
+            <a href="#social-media" class="hover:text-white transition-colors">MEDIA SOSIAL</a>
         </div>
-    </header>
+        <div class="sm:hidden">
+            <button id="menu-btn" class="text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
+    </nav>
 
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden fixed inset-0 z-50 bg-gray-900 bg-opacity-95 flex-col items-center justify-center space-y-8 text-2xl">
-        <button id="close-menu-button" class="absolute top-6 right-6 text-white text-4xl">&times;</button>
-        <a href="#home" class="hover:text-teal-400 transition-colors">Beranda</a>
-        <a href="#games" class="hover:text-teal-400 transition-colors">Top Up</a>
-        <a href="#about" class="hover:text-teal-400 transition-colors">Tentang Kami</a>
+    <div id="mobile-menu" class="absolute top-0 left-0 w-full bg-gray-900 bg-opacity-90 p-8 pt-24 space-y-4 text-center text-gray-300 transition-transform transform -translate-y-full hidden z-10">
+        <a href="#how-to-buy" class="block py-2 hover:text-white uppercase">Cara Pembelian</a>
+        <a href="#about-us" class="block py-2 hover:text-white uppercase">Tentang Kami</a>
+        <a href="#social-media" class="block py-2 hover:text-white uppercase">Media Sosial</a>
     </div>
 
-    <!-- Main Content -->
-    <main id="home-page" class="pt-24 min-h-screen px-4 text-white">
-        <section id="home" class="p-6 md:p-12 mb-12">
-            <div class="w-full h-48 overflow-hidden rounded-2xl relative shadow-xl">
-                <div id="carousel-container" class="flex transition-transform duration-500 ease-in-out h-full">
-                    <div class="w-full flex-shrink-0">
-                        <img src="https://placehold.co/1200x400/1f2937/ffffff?text=Promo+Terbaru+1" alt="Carousel 1" class="w-full h-full object-cover">
-                    </div>
-                    <div class="w-full flex-shrink-0">
-                        <img src="https://placehold.co/1200x400/2d3748/ffffff?text=Promo+Terbaru+2" alt="Carousel 2" class="w-full h-full object-cover">
-                    </div>
-                    <div class="w-full flex-shrink-0">
-                        <img src="https://placehold.co/1200x400/4a5568/ffffff?text=Promo+Terbaru+3" alt="Carousel 3" class="w-full h-full object-cover">
-                    </div>
-                </div>
+    <!-- Halaman Utama -->
+    <div id="main-page" class="container mx-auto py-8">
+        <!-- Banner Slider -->
+        <div class="relative w-full overflow-hidden rounded-2xl mb-8">
+            <div id="banner-slider" class="flex transition-transform duration-500">
+                <img src="https://placehold.co/1000x300/6d28d9/ffffff?text=BANNER+1" alt="Banner 1" class="w-full flex-shrink-0">
+                <img src="https://placehold.co/1000x300/4c1d95/ffffff?text=BANNER+2" alt="Banner 2" class="w-full flex-shrink-0">
+                <img src="https://placehold.co/1000x300/2c0d6e/ffffff?text=BANNER+3" alt="Banner 3" class="w-full flex-shrink-0">
             </div>
-            <div class="text-center mt-6">
-                <h2 class="text-3xl md:text-5xl font-extrabold text-teal-300">Selamat Datang di Diamond Zone</h2>
-                <p class="mt-2 text-md md:text-lg text-gray-300">Top up game murah, cepat, dan terpercaya!</p>
-            </div>
-        </section>
+            <button id="prev-btn" class="absolute top-1/2 left-4 -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 transition-colors">&lt;</button>
+            <button id="next-btn" class="absolute top-1/2 right-4 -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 transition-colors">&gt;</button>
+        </div>
 
-        <section id="games" class="mb-12">
-            <h2 class="text-2xl font-bold text-center mb-6">PILIH GAME</h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
-                <!-- Most popular games moved to the top and are no longer duplicated -->
-                <div class="game-card card rounded-2xl shadow-xl" data-game="mobile-legend">
-                    <img src="https://placehold.co/300x400/505050/ffffff?text=MLBB" alt="Mobile Legends">
-                    <div class="overlay text-white">
-                        <h3 class="font-bold">Mobile Legends</h3>
-                    </div>
-                </div>
-                <div class="game-card card rounded-2xl shadow-xl" data-game="free-fire">
-                    <img src="https://placehold.co/300x400/505050/ffffff?text=Free+Fire" alt="Free Fire">
-                    <div class="overlay text-white">
-                        <h3 class="font-bold">Free Fire</h3>
-                    </div>
-                </div>
-                <div class="game-card card rounded-2xl shadow-xl" data-game="roblox">
-                    <img src="https://placehold.co/300x400/505050/ffffff?text=Roblox" alt="Roblox">
-                    <div class="overlay text-white">
-                        <h3 class="font-bold">Roblox</h3>
-                    </div>
-                </div>
-                <!-- The rest of the games follow -->
-                <div class="game-card card rounded-2xl shadow-xl" data-game="genshin-impact">
-                    <img src="https://placehold.co/300x400/505050/ffffff?text=Genshin" alt="Genshin Impact">
-                    <div class="overlay text-white">
-                        <h3 class="font-bold">Genshin Impact</h3>
-                    </div>
-                </div>
-                <div class="game-card card rounded-2xl shadow-xl" data-game="codm">
-                    <img src="https://placehold.co/300x400/505050/ffffff?text=CODM" alt="COD Mobile">
-                    <div class="overlay text-white">
-                        <h3 class="font-bold">COD Mobile</h3>
-                    </div>
-                </div>
-                <div class="game-card card rounded-2xl shadow-xl" data-game="hok">
-                    <img src="https://placehold.co/300x400/505050/ffffff?text=HOK" alt="Honor of Kings">
-                    <div class="overlay text-white">
-                        <h3 class="font-bold">Honor of Kings</h3>
-                    </div>
-                </div>
-                <div class="game-card card rounded-2xl shadow-xl" data-game="fc-mobile">
-                    <img src="https://placehold.co/300x400/505050/ffffff?text=FC+Mobile" alt="FC Mobile">
-                    <div class="overlay text-white">
-                        <h3 class="font-bold">FC Mobile</h3>
-                    </div>
-                </div>
-                <div class="game-card card rounded-2xl shadow-xl" data-game="guardian-tales">
-                    <img src="https://placehold.co/300x400/505050/ffffff?text=Guardian+Tales" alt="Guardian Tales">
-                    <div class="overlay text-white">
-                        <h3 class="font-bold">Guardian Tales</h3>
-                    </div>
-                </div>
-                <div class="game-card card rounded-2xl shadow-xl" data-game="pubg">
-                    <img src="https://placehold.co/300x400/505050/ffffff?text=PUBG" alt="PUBG Mobile">
-                    <div class="overlay text-white">
-                        <h3 class="font-bold">PUBG Mobile</h3>
-                    </div>
-                </div>
-                <div class="game-card card rounded-2xl shadow-xl" data-game="super-sus">
-                    <img src="https://placehold.co/300x400/505050/ffffff?text=Super+Sus" alt="Super Sus">
-                    <div class="overlay text-white">
-                        <h3 class="font-bold">Super Sus</h3>
-                    </div>
-                </div>
-                <div class="game-card card rounded-2xl shadow-xl" data-game="magic-chess">
-                    <img src="https://placehold.co/300x400/505050/ffffff?text=Magic+Chess" alt="Magic Chess">
-                    <div class="overlay text-white">
-                        <h3 class="font-bold">Magic Chess</h3>
-                    </div>
-                </div>
-                <div class="game-card card rounded-2xl shadow-xl" data-game="valorant">
-                    <img src="https://placehold.co/300x400/505050/ffffff?text=Valorant" alt="Valorant">
-                    <div class="overlay text-white">
-                        <h3 class="font-bold">Valorant</h3>
-                    </div>
-                </div>
-                <div class="game-card card rounded-2xl shadow-xl" data-game="honkai">
-                    <img src="https://placehold.co/300x400/505050/ffffff?text=Honkai" alt="Honkai">
-                    <div class="overlay text-white">
-                        <h3 class="font-bold">Honkai</h3>
-                    </div>
-                </div>
-                <div class="game-card card rounded-2xl shadow-xl" data-game="lol">
-                    <img src="https://placehold.co/300x400/505050/ffffff?text=LOL" alt="League of Legends">
-                    <div class="overlay text-white">
-                        <h3 class="font-bold">League of Legends</h3>
-                    </div>
-                </div>
+        <h2 class="text-white text-2xl font-bold mb-4 uppercase">POPULER SEKARANG</h2>
+        
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+            <!-- Game Cards -->
+            <div class="game-card p-2 rounded-xl text-center" data-game="Mobile Legend">
+                <img src="https://placehold.co/200x250/312e81/ffffff?text=MLBB" alt="Mobile Legend" class="w-full h-auto rounded-lg mb-2">
+                <p class="font-semibold text-sm sm:text-base text-white">Mobile Legend</p>
             </div>
-        </section>
-
-        <section id="about" class="mb-12">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="card rounded-3xl p-6 md:p-8 shadow-xl text-center bg-gray-900 bg-opacity-80 backdrop-blur-md">
-                    <h2 class="text-xl font-bold mb-4">Tentang Kami</h2>
-                    <p class="text-gray-300">
-                        Diamond Zone adalah platform top up game terpercaya yang menyediakan berbagai kebutuhan in-game Anda dengan harga terjangkau. Kami berkomitmen untuk memberikan layanan tercepat dan termudah agar pengalaman bermain game Anda semakin menyenangkan.
-                    </p>
-                </div>
-                <div class="card rounded-3xl p-6 md:p-8 shadow-xl text-center bg-gray-900 bg-opacity-80 backdrop-blur-md">
-                    <h3 class="text-xl font-bold mb-4">Cara Pembelian</h3>
-                    <ol class="text-left text-gray-300 space-y-2 mx-auto">
-                        <li>1. Pilih game dan nominal yang diinginkan.</li>
-                        <li>2. Masukkan ID Akun Anda.</li>
-                        <li>3. Pilih metode pembayaran yang tersedia.</li>
-                        <li>4. Klik "PESAN SEKARANG!" untuk konfirmasi pesanan.</li>
-                        <li>5. Pesanan akan otomatis dikirimkan ke WhatsApp admin kami untuk diproses lebih lanjut.</li>
-                    </ol>
-                </div>
-                <div class="card rounded-3xl p-6 md:p-8 shadow-xl text-center bg-gray-900 bg-opacity-80 backdrop-blur-md">
-                    <h3 class="text-xl font-bold mb-4">Media Sosial Kami</h3>
-                    <div class="flex justify-center space-x-6">
-                        <a href="https://www.tiktok.com/@diamondzone" target="_blank" class="text-gray-300 hover:text-white transition-colors flex flex-col items-center">
-                            <img src="https://www.gstatic.com/youtube/img/branding/screenshots/tiktok_app_store_icon.png" alt="TikTok" class="icon-image">
-                            <span class="mt-2 text-sm">TikTok</span>
-                        </a>
-                        <a href="https://www.instagram.com/diamondzone" target="_blank" class="text-gray-300 hover:text-white transition-colors flex flex-col items-center">
-                            <img src="https://www.gstatic.com/youtube/img/branding/screenshots/instagram_app_store_icon.png" alt="Instagram" class="icon-image">
-                            <span class="mt-2 text-sm">Instagram</span>
-                        </a>
-                        <a href="https://www.youtube.com/@diamondzone" target="_blank" class="text-gray-300 hover:text-white transition-colors flex flex-col items-center">
-                            <img src="https://www.gstatic.com/youtube/img/branding/screenshots/youtube_app_store_icon.png" alt="YouTube" class="icon-image">
-                            <span class="mt-2 text-sm">YouTube</span>
-                        </a>
-                    </div>
-                </div>
+            <div class="game-card p-2 rounded-xl text-center" data-game="Free Fire">
+                <img src="https://placehold.co/200x250/dc2626/ffffff?text=Free+Fire" alt="Free Fire" class="w-full h-auto rounded-lg mb-2">
+                <p class="font-semibold text-sm sm:text-base text-white">Free Fire</p>
             </div>
-        </section>
-    </main>
-
-    <!-- Payment Page (Initially Hidden) -->
-    <div id="payment-page" class="hidden min-h-screen pt-24 px-4 text-white">
-        <div class="container mx-auto max-w-3xl">
-            <button id="back-button" class="flex items-center text-gray-400 hover:text-white transition-colors mb-6">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-                </svg>
-                Kembali
-            </button>
-            <div class="card rounded-2xl p-6 mb-6 shadow-xl flex items-center space-x-4 bg-gray-900 bg-opacity-80 backdrop-blur-md">
-                <img id="game-logo" src="" alt="Game Logo" class="w-16 h-16 rounded-full border border-gray-700">
-                <div>
-                    <h2 id="game-title" class="text-xl font-bold"></h2>
-                    <p id="game-subtitle" class="text-gray-400"></p>
-                </div>
+            <div class="game-card p-2 rounded-xl text-center" data-game="Roblox">
+                <img src="https://placehold.co/200x250/2563eb/ffffff?text=Roblox" alt="Roblox" class="w-full h-auto rounded-lg mb-2">
+                <p class="font-semibold text-sm sm:text-base text-white">Roblox</p>
             </div>
-            <div id="nominal-sections"></div>
-            <div class="card rounded-2xl p-6 mb-6 shadow-xl bg-gray-900 bg-opacity-80 backdrop-blur-md">
-                <h3 class="text-lg font-semibold mb-2">3. Pilih Metode Pembayaran</h3>
-                <div id="payment-methods" class="flex justify-center space-x-6">
-                    <div class="payment-option cursor-pointer rounded-2xl p-4 bg-gray-800 hover:bg-gray-700 transition-colors" data-method="gopay">
-                        <img src="https://cdn.icon-icons.com/icons2/2699/PNG/512/gopay_logo_icon_169956.png" alt="GoPay" class="h-16 w-16 mx-auto">
-                        <p class="text-center text-sm mt-2">GoPay</p>
-                    </div>
-                    <div class="payment-option cursor-pointer rounded-2xl p-4 bg-gray-800 hover:bg-gray-700 transition-colors" data-method="ovo">
-                        <img src="https://cdn.icon-icons.com/icons2/2699/PNG/512/ovo_logo_icon_169957.png" alt="OVO" class="h-16 w-16 mx-auto">
-                        <p class="text-center text-sm mt-2">OVO</p>
-                    </div>
-                    <div class="payment-option cursor-pointer rounded-2xl p-4 bg-gray-800 hover:bg-gray-700 transition-colors" data-method="dana">
-                        <img src="https://cdn.icon-icons.com/icons2/2699/PNG/512/dana_logo_icon_169947.png" alt="DANA" class="h-16 w-16 mx-auto">
-                        <p class="text-center text-sm mt-2">DANA</p>
-                    </div>
-                </div>
+            <div class="game-card p-2 rounded-xl text-center" data-game="FC Mobile">
+                <img src="https://placehold.co/200x250/16a34a/ffffff?text=FC+Mobile" alt="FC Mobile" class="w-full h-auto rounded-lg mb-2">
+                <p class="font-semibold text-sm sm:text-base text-white">FC Mobile</p>
             </div>
-            <div class="text-center">
-                <button id="buy-button" class="w-full sm:w-1/2 bg-teal-500 hover:bg-teal-600 text-gray-900 font-bold py-3 px-6 rounded-xl shadow-lg transition-colors text-lg">
-                    PESAN SEKARANG!
-                </button>
+            <div class="game-card p-2 rounded-xl text-center" data-game="CODM">
+                <img src="https://placehold.co/200x250/1f2937/ffffff?text=CODM" alt="CODM" class="w-full h-auto rounded-lg mb-2">
+                <p class="font-semibold text-sm sm:text-base text-white">CODM</p>
+            </div>
+            <div class="game-card p-2 rounded-xl text-center" data-game="HOK">
+                <img src="https://placehold.co/200x250/991b1b/ffffff?text=HOK" alt="HOK" class="w-full h-auto rounded-lg mb-2">
+                <p class="font-semibold text-sm sm:text-base text-white">Honor of Kings</p>
+            </div>
+            <div class="game-card p-2 rounded-xl text-center" data-game="Guardian Tales">
+                <img src="https://placehold.co/200x250/f59e0b/ffffff?text=Guardian+Tales" alt="Guardian Tales" class="w-full h-auto rounded-lg mb-2">
+                <p class="font-semibold text-sm sm:text-base text-white">Guardian Tales</p>
+            </div>
+            <div class="game-card p-2 rounded-xl text-center" data-game="PUBG">
+                <img src="https://placehold.co/200x250/334155/ffffff?text=PUBG" alt="PUBG" class="w-full h-auto rounded-lg mb-2">
+                <p class="font-semibold text-sm sm:text-base text-white">PUBG</p>
+            </div>
+            <div class="game-card p-2 rounded-xl text-center" data-game="Genshin Impact">
+                <img src="https://placehold.co/200x250/6b21a8/ffffff?text=Genshin" alt="Genshin Impact" class="w-full h-auto rounded-lg mb-2">
+                <p class="font-semibold text-sm sm:text-base text-white">Genshin Impact</p>
+            </div>
+            <div class="game-card p-2 rounded-xl text-center" data-game="Super Sus">
+                <img src="https://placehold.co/200x250/065f46/ffffff?text=Super+Sus" alt="Super Sus" class="w-full h-auto rounded-lg mb-2">
+                <p class="font-semibold text-sm sm:text-base text-white">Super Sus</p>
+            </div>
+            <div class="game-card p-2 rounded-xl text-center" data-game="Magic Chest">
+                <img src="https://placehold.co/200x250/94a3b8/ffffff?text=Magic+Chest" alt="Magic Chest" class="w-full h-auto rounded-lg mb-2">
+                <p class="font-semibold text-sm sm:text-base text-white">Magic Chest</p>
+            </div>
+            <div class="game-card p-2 rounded-xl text-center" data-game="Honkai Impact 3">
+                <img src="https://placehold.co/200x250/be185d/ffffff?text=Honkai+3" alt="Honkai Impact 3" class="w-full h-auto rounded-lg mb-2">
+                <p class="font-semibold text-sm sm:text-base text-white">Honkai Impact 3</p>
+            </div>
+            <div class="game-card p-2 rounded-xl text-center" data-game="LOL">
+                <img src="https://placehold.co/200x250/5b21b6/ffffff?text=LOL" alt="LOL" class="w-full h-auto rounded-lg mb-2">
+                <p class="font-semibold text-sm sm:text-base text-white">League of Legends</p>
+            </div>
+            <div class="game-card p-2 rounded-xl text-center" data-game="Stumble Guys">
+                <img src="https://placehold.co/200x250/fde047/000000?text=Stumble+Guys" alt="Stumble Guys" class="w-full h-auto rounded-lg mb-2">
+                <p class="font-semibold text-sm sm:text-base text-white">Stumble Guys</p>
+            </div>
+            <div class="game-card p-2 rounded-xl text-center" data-game="Valorant">
+                <img src="https://placehold.co/200x250/991b1b/ffffff?text=Valorant" alt="Valorant" class="w-full h-auto rounded-lg mb-2">
+                <p class="font-semibold text-sm sm:text-base text-white">Valorant</p>
             </div>
         </div>
     </div>
 
-    <!-- Confirmation Modal -->
-    <div id="confirmation-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center modal">
-        <div class="bg-gray-900 rounded-xl p-8 max-w-md w-full text-center
+    <!-- Halaman Pembayaran -->
+    <div id="payment-page" class="container mx-auto py-8 hidden">
+        <button id="back-btn" class="mb-4 text-white hover:text-gray-300 transition-colors">&larr; KEMBALI</button>
+        
+        <div class="bg-gray-800 bg-opacity-70 p-6 sm:p-8 rounded-2xl shadow-lg border border-purple-600 backdrop-blur-lg">
+            <div class="flex flex-col sm:flex-row items-center mb-6">
+                <img id="game-logo" class="w-20 h-20 sm:w-24 sm:h-24 rounded-full border-4 border-purple-500 mr-4" src="" alt="Game Logo">
+                <div>
+                    <h2 id="game-title" class="text-2xl sm:text-3xl font-bold text-white uppercase"></h2>
+                    <p class="text-sm text-gray-400">TOP UP DIAMOND</p>
+                </div>
+            </div>
+
+            <div class="space-y-6">
+                <!-- Langkah 1: Masukkan Data Akun -->
+                <div class="bg-gray-900 bg-opacity-50 p-4 rounded-xl">
+                    <h3 class="font-semibold text-lg text-white mb-2 uppercase">1. Masukkan Data Akun</h3>
+                    <input type="text" id="user-id" placeholder="Masukkan User ID" class="w-full p-3 rounded-lg input-field placeholder-gray-400 focus:ring-2 focus:ring-purple-500">
+                </div>
+
+                <!-- Langkah 2: Pilih Nominal -->
+                <div class="bg-gray-900 bg-opacity-50 p-4 rounded-xl">
+                    <h3 class="font-semibold text-lg text-white mb-2 uppercase">2. Pilih Nominal</h3>
+                    <div id="nominal-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+                        <!-- Nominal will be generated by JS -->
+                    </div>
+                </div>
+
+                <!-- Langkah 3: Selesaikan Pembayaran -->
+                <div class="bg-gray-900 bg-opacity-50 p-4 rounded-xl">
+                    <h3 class="font-semibold text-lg text-white mb-2 uppercase">3. Selesaikan Pembayaran via WhatsApp</h3>
+                </div>
+
+                <!-- Tombol Konfirmasi -->
+                <button id="buy-now-btn" class="w-full btn-payment text-white py-3 rounded-xl font-bold text-lg shadow-lg uppercase">Pesan Sekarang</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Konten di bawah game -->
+    <div class="container mx-auto py-16 text-gray-300 space-y-12">
+        <div id="how-to-buy" class="bg-gray-800 bg-opacity-70 p-6 sm:p-8 rounded-2xl shadow-lg border border-purple-600 backdrop-blur-lg">
+            <h2 class="text-3xl font-bold text-white mb-4 uppercase">Cara Pembelian</h2>
+            <p>1. Pilih game yang ingin di-top up dari daftar di atas.</p>
+            <p>2. Masukkan User ID dan Server (jika ada) Anda.</p>
+            <p>3. Pilih nominal diamond/item yang Anda inginkan.</p>
+            <p>4. Klik tombol "Pesan Sekarang" dan Anda akan diarahkan ke WhatsApp untuk menyelesaikan pembayaran.</p>
+        </div>
+        
+        <div id="about-us" class="bg-gray-800 bg-opacity-70 p-6 sm:p-8 rounded-2xl shadow-lg border border-purple-600 backdrop-blur-lg">
+            <h2 class="text-3xl font-bold text-white mb-4 uppercase">Tentang Kami</h2>
+            <p>Diamond Zone adalah platform terpercaya untuk top up berbagai game populer. Kami berkomitmen untuk menyediakan layanan yang cepat, aman, dan harga yang terjangkau bagi para gamer di seluruh Indonesia.</p>
+        </div>
+
+        <div id="social-media" class="bg-gray-800 bg-opacity-70 p-6 sm:p-8 rounded-2xl shadow-lg border border-purple-600 backdrop-blur-lg">
+            <h2 class="text-3xl font-bold text-white mb-4 uppercase">Media Sosial Kami</h2>
+            <p>Ikuti kami di media sosial untuk mendapatkan informasi terbaru, promo, dan giveaway!</p>
+            <div class="flex space-x-4 mt-4 text-white">
+                <a href="#" class="text-2xl hover:text-gray-400 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 448 512" fill="currentColor"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+                </a>
+                <a href="#" class="text-2xl hover:text-gray-400 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 448 512" fill="currentColor"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M448 73.1H299.8c11.7-55.7 61.3-99.5 120.2-99.5 13.9 0 26.6 2.4 37.1 6.5l-12.7 40.2c-5.7-1.9-12.1-3-18.7-3-38.4 0-69.5 31.1-69.5 69.5v52.6h85.3V141H299.8v101.4h85.3L371.7 282H299.8V437.3c0 20.3 16.5 36.8 36.8 36.8h17.9c16.1 0 29.2-13.1 29.2-29.2V323.8h-41.5V364c0 10.9-8.9 19.8-19.8 19.8h-17.9c-1.2 0-2.3-.1-3.4-.3V512H0V168h211.5c-4.2 16.3-6.5 33.6-6.5 52.6 0 98.4 80 178.4 178.4 178.4 17.1 0 33.7-2.4 49.6-6.8L448 437.4V73.1zM112.5 109.9h-42.2v42.2h42.2V109.9z"/></svg>
+                </a>
+                <a href="#" class="text-2xl hover:text-gray-400 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 448 512" fill="currentColor"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M448 209.9a210.1 210.1 0 0 1-52.5 136.2c-15.4 17.5-29.7 33.3-43.1 48.9a175.7 175.7 0 0 1-27.1 28.1c-19.3 15.6-39 29-59.5 40.5-20.9 11.5-42.9 21.2-65.7 28.5-22.9 7.3-46.7 12.1-71 14.5a212.7 212.7 0 0 1-28.5 1.5c-50.5 0-96.1-12.1-135.2-36.2-22.1-13.5-42.5-29.9-60.8-48.4C6.5 358.5 0 334.8 0 309.8a211.1 211.1 0 0 1 1.7-25.5 210.5 210.5 0 0 1 12.9-45.8 210.5 210.5 0 0 1 29-45.2c16.1-20.6 34.6-39.7 55.4-56.7 20.8-17 43.1-32.3 66.8-45.7 23.7-13.4 48.7-25.7 74.9-36.8a215.1 215.1 0 0 1 28.7-11.4 210.1 210.1 0 0 1 136.2 52.5c17.5 15.4 33.3 29.7 48.9 43.1 15.6 15.7 28.1 27.1 40.5 44.1 11.5 19.3 21.2 39 28.5 59.5 7.3 20.9 12.1 42.9 14.5 65.7 2.4 22.9 1.5 46.7 1.5 71 0 50.5-12.1 96.1-36.2 135.2-13.5 22.1-29.9 42.5-48.4 60.8-18.4 18.3-42.1 34.8-67.1 48.4-25.1 13.6-52.6 24.2-81.5 32.2a210.5 210.5 0 0 1-45.8 12.9 211.1 211.1 0 0 1-25.5 1.7c-50.5 0-96.1-12.1-135.2-36.2-22.1-13.5-42.5-29.9-60.8-48.4-18.4-18.3-34.8-42.1-48.4-67.1-13.6-25.1-24.2-52.6-32.2-81.5A210.5 210.5 0 0 1 1.7 220.7a211.1 211.1 0 0 1 25.5-1.7 210.5 210.5 0 0 1 45.8-12.9 210.5 210.5 0 0 1 45.2-29c20.6-16.1 39.7-34.6 56.7-55.4 17-20.8 32.3-43.1 45.7-66.8 13.4-23.7 25.7-48.7 36.8-74.9 11.4-28.7 1.5-56.7 1.5-85.4a211.1 211.1 0 0 1-1.7-25.5 210.5 210.5 0 0 1-12.9-45.8 210.5 210.5 0 0 1-29-45.2z"/></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
