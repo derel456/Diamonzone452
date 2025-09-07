@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentIndex = 0;
     let bannerInterval;
 
-    const adminWhatsAppNumber = '+6281234567890'; // Ganti dengan nomor WhatsApp admin Anda
+    const adminWhatsAppNumber = '+6281410545261'; // Ganti dengan nomor WhatsApp admin Anda
 
     const gameData = {
         'Mobile Legend': {
