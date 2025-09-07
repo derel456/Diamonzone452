@@ -1,4 +1,3 @@
-// Data game dan nominal
 const gamesData = {
     "mobile-legend": {
         title: "Mobile Legends: Bang Bang",
@@ -14,7 +13,9 @@ const gamesData = {
             { amount: "875 Diamond", price: "Rp 230.000" },
             { amount: "1048 Diamond", price: "Rp 270.000" },
             { amount: "1159 Diamond", price: "Rp 299.500" },
-            { amount: "Wdp", price: "Rp 28.000" },
+        ],
+        additional: [
+            { amount: "Wdp", price: "Rp 28.000" }
         ]
     },
     "free-fire": {
@@ -31,6 +32,8 @@ const gamesData = {
             { amount: "720 Diamond", price: "Rp 98.000" },
             { amount: "1450 Diamond", price: "Rp 201.000" },
             { amount: "2180 Diamond", price: "Rp 302.000" },
+        ],
+        additional: [
             { amount: "Membership Mingguan Lite", price: "Rp 15.000" },
             { amount: "Membership Mingguan Biasa", price: "Rp 30.000" },
             { amount: "Membership Bulanan", price: "Rp 86.000" },
@@ -45,6 +48,8 @@ const gamesData = {
             { amount: "800 Robux (Biasa)", price: "Rp 159.000" },
             { amount: "1600 Robux (Biasa)", price: "Rp 310.000" },
             { amount: "4000 Robux (Biasa)", price: "Rp 762.000" },
+        ],
+        additional: [
             { amount: "100 Robux (Gamepass)", price: "Rp 14.000" },
             { amount: "200 Robux (Gamepass)", price: "Rp 27.000" },
             { amount: "300 Robux (Gamepass)", price: "Rp 40.000" },
@@ -69,6 +74,8 @@ const gamesData = {
             { amount: "2200 FC Point", price: "Rp 232.500" },
             { amount: "5750 FC Point", price: "Rp 785.000" },
             { amount: "12000 FC Point", price: "Rp 1.571.000" },
+        ],
+        additional: [
             { amount: "39 Silver", price: "Rp 6.500" },
             { amount: "99 Silver", price: "Rp 16.000" },
             { amount: "499 Silver", price: "Rp 78.000" },
@@ -138,8 +145,10 @@ const gamesData = {
             { amount: "330 Crystal", price: "Rp 59.000" },
             { amount: "1090 Crystal (980 + 110)", price: "Rp 177.000" },
             { amount: "2240 Crystal (1980 + 260)", price: "Rp 381.000" },
+        ],
+        additional: [
             { amount: "Blessing of the Welkin Moon", price: "Rp 58.000" },
-            { amount: "2x Blessing of the Welkin Moon", price: "Rp 116.000" },
+            { amount: "2x Blessing of the Welkin Moon", price: "Rp 116.000" }
         ]
     },
     "super-sus": {
@@ -154,14 +163,16 @@ const gamesData = {
             { amount: "5750 Gem", price: "Rp 52.000" },
             { amount: "15000 Gem", price: "Rp 131.000" },
             { amount: "32000 Gem", price: "Rp 171.000" },
+        ],
+        additional: [
             { amount: "120 Token", price: "Rp 34.000" },
             { amount: "1300 Token", price: "Rp 271.000" },
         ]
     },
-    "magic-chest": {
-        title: "Magic Chess",
+    "magic-chess-go-go": {
+        title: "Magic Chess Go Go",
         subtitle: "Moonton",
-        logo: "https://placehold.co/40x40/505050/ffffff?text=MC",
+        logo: "https://placehold.co/40x40/505050/ffffff?text=MCGG",
         nominals: [
             { amount: "12 Diamond", price: "Rp 3.000" },
             { amount: "28 Diamond", price: "Rp 6.000" },
@@ -176,7 +187,9 @@ const gamesData = {
             { amount: "875 Diamond", price: "Rp 106.000" },
             { amount: "2010 Diamond", price: "Rp 78.000" },
             { amount: "4830 Diamond", price: "Rp 57.000" },
-            { amount: "WDP", price: "Rp 27.000" },
+        ],
+        additional: [
+            { amount: "WDP", price: "Rp 27.000" }
         ]
     },
     "honkai-impact-3": {
@@ -188,10 +201,12 @@ const gamesData = {
             { amount: "330 Crystal", price: "Rp 74.000" },
             { amount: "710 Crystal", price: "Rp 160.000" },
             { amount: "1430 Crystal", price: "Rp 330.000" },
-            { amount: "30 B-chips", price: "Rp 8.000" },
-            { amount: "65 B-chips", price: "Rp 16.000" },
-            { amount: "330 B-chips", price: "Rp 74.000" },
-            { amount: "990 B-chips", price: "Rp 227.000" },
+        ],
+        additional: [
+            { amount: "30 B-Chps", price: "Rp 8.000" },
+            { amount: "65 B-Chps", price: "Rp 16.000" },
+            { amount: "330 B-Chps", price: "Rp 74.000" },
+            { amount: "990 B-Chps", price: "Rp 227.000" },
         ]
     },
     "lol": {
@@ -203,17 +218,6 @@ const gamesData = {
             { amount: "2800 RP", price: "Rp 267.000" },
             { amount: "4500 RP", price: "Rp 423.000" },
             { amount: "6500 RP", price: "Rp 595.000" },
-        ]
-    },
-    "stumble-guys": {
-        title: "Stumble Guys",
-        subtitle: "Kitka Games",
-        logo: "https://placehold.co/40x40/505050/ffffff?text=SG",
-        nominals: [
-            { amount: "160 Gems", price: "Rp 16.000" },
-            { amount: "800 Gems", price: "Rp 72.000" },
-            { amount: "1600 Gems", price: "Rp 144.000" },
-            { amount: "16000 Gems", price: "Rp 1.440.000" },
         ]
     },
     "valorant": {
@@ -229,7 +233,6 @@ const gamesData = {
     }
 };
 
-// Elemen DOM
 const homePage = document.getElementById('home-page');
 const paymentPage = document.getElementById('payment-page');
 const gameCards = document.querySelectorAll('.game-card');
@@ -238,6 +241,7 @@ const gameTitleEl = document.getElementById('game-title');
 const gameSubtitleEl = document.getElementById('game-subtitle');
 const gameLogoEl = document.getElementById('game-logo');
 const nominalOptionsEl = document.getElementById('nominal-options');
+const additionalOptionsEl = document.getElementById('additional-options');
 const paymentMethodsEl = document.getElementById('payment-methods');
 const userIdInput = document.getElementById('user-id');
 const buyButton = document.getElementById('buy-button');
@@ -249,13 +253,13 @@ const mobileMenuButton = document.getElementById('mobile-menu-button');
 const mobileMenu = document.getElementById('mobile-menu');
 const closeMenuButton = document.getElementById('close-menu-button');
 const carouselContainer = document.getElementById('carousel-container');
+const navLinks = document.querySelectorAll('nav a, #mobile-menu a');
 
 let selectedNominal = null;
 let selectedPaymentMethod = null;
 let selectedGame = null;
 let currentSlide = 0;
 
-// Fungsi untuk mengirim pesan ke WhatsApp
 function sendToWhatsApp(message) {
     const phoneNumber = "6281234567890";
     const encodedMessage = encodeURIComponent(message);
@@ -263,16 +267,15 @@ function sendToWhatsApp(message) {
     window.open(whatsappURL, '_blank');
 }
 
-// Fungsi untuk menampilkan modal
 function showModal(message, isConfirmation = false) {
     modalTextEl.textContent = message;
     confirmationModal.classList.remove('hidden');
-    confirmationModal.classList.add('flex', 'items-center', 'justify-center');
+    confirmationModal.style.display = 'flex';
 
     const newModalOkButton = modalOkButton.cloneNode(true);
     modalOkButton.parentNode.replaceChild(newModalOkButton, modalOkButton);
     newModalOkButton.addEventListener('click', () => {
-        confirmationModal.classList.add('hidden');
+        confirmationModal.style.display = 'none';
     });
 
     if (isConfirmation) {
@@ -282,25 +285,50 @@ function showModal(message, isConfirmation = false) {
             const userId = userIdInput.value;
             const message = `Halo Admin, saya ingin top up game.\n\nDetail Pesanan:\n- Game: ${game.title}\n- ID Pengguna: ${userId}\n- Nominal: ${selectedNominal.amount}\n- Harga: ${selectedNominal.price}\n- Pembayaran: ${selectedPaymentMethod.toUpperCase()}\n\nMohon diproses, terima kasih.`;
             sendToWhatsApp(message);
-            confirmationModal.classList.add('hidden');
+            confirmationModal.style.display = 'none';
         }, { once: true });
     }
 }
 
-// Fungsi untuk menggeser banner
 function nextSlide() {
     currentSlide = (currentSlide + 1) % 3;
     carouselContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
 }
 
-// Tambahkan event listener untuk memastikan DOM sudah terisi penuh
-document.addEventListener('DOMContentLoaded', () => {
+function renderNominals(nominals, container) {
+    container.innerHTML = '';
+    if (!nominals || nominals.length === 0) {
+        container.innerHTML = '<p class="text-gray-400">Belum ada nominal tersedia.</p>';
+        return;
+    }
+    nominals.forEach((nominal) => {
+        const nominalCard = document.createElement('div');
+        nominalCard.classList.add('payment-option', 'text-center', 'cursor-pointer', 'rounded-xl', 'p-4', 'bg-gray-800', 'hover:bg-gray-700', 'transition-colors');
+        nominalCard.innerHTML = `
+            <p class="font-bold text-lg">${nominal.amount.toUpperCase()}</p>
+            <p class="text-sm text-gray-400">${nominal.price.toUpperCase()}</p>
+        `;
+        nominalCard.dataset.amount = nominal.amount;
+        nominalCard.dataset.price = nominal.price;
+        nominalCard.addEventListener('click', () => {
+            // Hapus seleksi dari semua opsi nominal dan tambahan
+            document.querySelectorAll('#nominal-options .payment-option').forEach(el => el.classList.remove('selected'));
+            document.querySelectorAll('#additional-options .payment-option').forEach(el => el.classList.remove('selected'));
+            
+            nominalCard.classList.add('selected');
+            selectedNominal = nominal;
+        });
+        container.appendChild(nominalCard);
+    });
+}
 
+document.addEventListener('DOMContentLoaded', () => {
     setInterval(nextSlide, 5000);
 
     function showPaymentPage(gameId) {
         const game = gamesData[gameId];
         if (!game) {
+            showModal("Data game tidak ditemukan.");
             return;
         }
 
@@ -309,31 +337,30 @@ document.addEventListener('DOMContentLoaded', () => {
         gameSubtitleEl.textContent = game.subtitle.toUpperCase();
         gameLogoEl.src = game.logo;
 
-        nominalOptionsEl.innerHTML = '';
-        game.nominals.forEach((nominal) => {
-            const nominalCard = document.createElement('div');
-            nominalCard.classList.add('payment-option', 'text-center', 'cursor-pointer', 'rounded-xl', 'p-4', 'bg-gray-800', 'hover:bg-gray-700', 'transition-colors');
-            nominalCard.innerHTML = `
-                <p class="font-bold text-lg">${nominal.amount.toUpperCase()}</p>
-                <p class="text-sm text-gray-400">${nominal.price.toUpperCase()}</p>
-            `;
-            nominalCard.dataset.amount = nominal.amount;
-            nominalCard.dataset.price = nominal.price;
-            nominalCard.addEventListener('click', () => {
-                document.querySelectorAll('#nominal-options .payment-option').forEach(el => el.classList.remove('selected'));
-                nominalCard.classList.add('selected');
-                selectedNominal = nominal;
-            });
-            nominalOptionsEl.appendChild(nominalCard);
-        });
-        
+        // Render nominal utama
+        renderNominals(game.nominals, nominalOptionsEl);
+
+        // Render nominal tambahan jika ada
+        additionalOptionsEl.innerHTML = '';
+        if (game.additional) {
+            const additionalTitle = document.createElement('h3');
+            additionalTitle.classList.add('text-lg', 'font-semibold', 'mt-4', 'mb-2');
+            additionalTitle.textContent = "NOMINAL LAINNYA";
+            additionalOptionsEl.appendChild(additionalTitle);
+            const additionalGrid = document.createElement('div');
+            additionalGrid.classList.add('grid', 'grid-cols-2', 'sm:grid-cols-3', 'gap-4');
+            additionalOptionsEl.appendChild(additionalGrid);
+            renderNominals(game.additional, additionalGrid);
+        }
+
         selectedNominal = null;
         selectedPaymentMethod = null;
         document.querySelectorAll('#payment-methods .payment-option').forEach(el => el.classList.remove('selected'));
+        userIdInput.value = '';
 
         homePage.classList.add('hidden');
         paymentPage.classList.remove('hidden');
-        window.scrollTo(0, 0); // Gulir ke atas
+        window.scrollTo(0, 0);
     }
 
     backButton.addEventListener('click', () => {
@@ -376,12 +403,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     closeModalButton.addEventListener('click', () => {
-        confirmationModal.classList.add('hidden');
+        confirmationModal.style.display = 'none';
     });
 
     window.addEventListener('click', (e) => {
         if (e.target === confirmationModal) {
-            confirmationModal.classList.add('hidden');
+            confirmationModal.style.display = 'none';
         }
     });
 
@@ -392,5 +419,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     closeMenuButton.addEventListener('click', () => {
         mobileMenu.classList.add('hidden');
+    });
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            const targetId = link.getAttribute('href').substring(1);
+            if (targetId) {
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    e.preventDefault();
+                    targetElement.scrollIntoView({ behavior: 'smooth' });
+                    mobileMenu.classList.add('hidden');
+                }
+            }
+        });
     });
 });
