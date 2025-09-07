@@ -184,7 +184,7 @@ const games = {
             { amount: '30 B-chips', price: 'Rp 8.000' },
             { amount: '65 B-chips', price: 'Rp 16.000' },
             { amount: '330 B-chips', price: 'Rp 74.000' },
-            { amount: '990 B-chips', price: 'Rp 227.000' }
+            { amount: '990 B-chips', price: 'Rp 227.0.0' }
         ]
     },
     "LOL": {
