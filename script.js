@@ -175,7 +175,7 @@ const games = {
         ]
     },
     "Honkai Impact 3": {
-        logo: "https://placehold.co/200x250/be185d/ffffff?text=Honkai+3",
+        logo: "https://share.google/images/xXmNIYPFQUmoD2kSF",
         nominals: [
             { amount: '65 Crystal', price: 'Rp 15.000' },
             { amount: '330 Crystal', price: 'Rp 74.000' },
