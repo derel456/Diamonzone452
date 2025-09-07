@@ -2,12 +2,16 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    background-color: #f3f4f6;
+    background: linear-gradient(to right, #e2e8f0, #93c5fd);
     color: #1f2937;
 }
 
 .container {
     max-width: 1200px;
+}
+
+.banner-bg {
+    background: linear-gradient(to right, #e2e8f0, #f3f4f6);
 }
 
 .game-card {
