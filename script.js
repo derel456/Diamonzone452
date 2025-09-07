@@ -300,6 +300,6 @@ buyNowBtn.addEventListener('click', () => {
     const gameName = gameTitle.textContent;
 
     const message = `Halo, saya ingin top up ${amount} untuk game ${gameName} dengan harga ${price}. User ID saya: ${userId}.`;
-    const whatsappUrl = `https://wa.me/6281234567890?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/6281410545261?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
 });
