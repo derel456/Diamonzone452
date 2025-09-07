@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #0f172a 0%, #0c4a6e 50%, #7c3aed 100%);
+    background: linear-gradient(135deg, #FFD700 0%, #00BFFF 100%);
     background-size: 400% 400%;
     animation: gradientAnimation 15s ease infinite;
     color: #e2e8f0;
