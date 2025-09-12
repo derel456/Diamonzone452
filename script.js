@@ -20,16 +20,17 @@ const games = {
     "Mobile Legend": {
         logo: "ml1.jpg",
         nominals: [
-            { amount: '95 Diamond', price: 'Rp 27.500' },
+            { amount: '98 Diamond', price: 'Rp 27.500' },
             { amount: '170 Diamond', price: 'Rp 46.000' },
-            { amount: '257 Diamond', price: 'Rp 69.500' },
-            { amount: '305 Diamond', price: 'Rp 80.000' },
-            { amount: '500 Diamond', price: 'Rp 91.000' },
-            { amount: '568 Diamond', price: 'Rp 143.500' },
-            { amount: '875 Diamond', price: 'Rp 230.000' },
-            { amount: '1048 Diamond', price: 'Rp 270.000' },
-            { amount: '1159 Diamond', price: 'Rp 299.500' },
+            { amount: '277 Diamond', price: 'Rp 76.000' },
+            { amount: '305 Diamond', price: 'Rp 84.000' },
+            { amount: '518 Diamond', price: 'Rp 142.000' },
+            { amount: '568 Diamond', price: 'Rp 149.500' },
+            { amount: '875 Diamond', price: 'Rp 228.000' },
+            { amount: '1048 Diamond', price: 'Rp 280.000' },
+            { amount: '1067 Diamond', price: 'Rp 285.500' },
             { amount: 'Wdp', price: 'Rp 28.000' }
+            { amount: '2x Wdp', price: 'Rp 56.000' }
         ]
     },
     "Free Fire": {
@@ -37,25 +38,29 @@ const games = {
         nominals: [
             { amount: '5 Diamond', price: 'Rp 1.000' },
             { amount: '12 Diamond', price: 'Rp 2.000' },
-            { amount: '50 Diamond', price: 'Rp 8.000' },
-            { amount: '70 Diamond', price: 'Rp 10.000' },
-            { amount: '120 Diamond', price: 'Rp 19.000' },
-            { amount: '355 Diamond', price: 'Rp 48.000' },
-            { amount: '720 Diamond', price: 'Rp 98.000' },
-            { amount: '1450 Diamond', price: 'Rp 201.000' },
-            { amount: '2180 Diamond', price: 'Rp 302.000' },
+            { amount: '50 Diamond', price: 'Rp 7.000' },
+            { amount: '70 Diamond', price: 'Rp 9.000' },
+            { amount: '120 Diamond', price: 'Rp 16.000' },
+            { amount: '140 Diamond', price: 'Rp 19.000' },
+            { amount: '355 Diamond', price: 'Rp 46.000' },
+            { amount: '720 Diamond', price: 'Rp 91.000' },
+            { amount: '740 Diamond', price: 'Rp 96.000' },
+            { amount: '800 Diamond', price: 'Rp 101.000' },
+            { amount: '1450 Diamond', price: 'Rp 190.000' },
+            { amount: '2180 Diamond', price: 'Rp 290.000' },
             { amount: 'Membership mingguan lite', price: 'Rp 15.000' },
             { amount: 'Membership mingguan biasa', price: 'Rp 30.000' },
-            { amount: 'Membership bulanan', price: 'Rp 86.000' }
+            { amount: 'Membership bulanan', price: 'Rp 82.000' }
         ]
     },
     "Roblox": {
         logo: "roblox1.jpg",
         nominals: [
-            { amount: '400 Robux (Biasa)', price: 'Rp 85.000' },
+            { amount: '100 Robux (Biasa)', price: 'Rp 85.000' },
+            { amount: '200 Robux (Biasa)', price: 'Rp 105.000' },
+            { amount: '400 Robux (Biasa)', price: 'Rp 114.000' },
             { amount: '800 Robux (Biasa)', price: 'Rp 159.000' },
-            { amount: '1600 Robux (Biasa)', price: 'Rp 310.000' },
-            { amount: '400 Robux (Biasa)', price: 'Rp 762.000' },
+            { amount: '2000 Robux (Biasa)', price: 'Rp 389.000' },
             { amount: '100 Robux (Gamepass)', price: 'Rp 14.000' },
             { amount: '200 Robux (Gamepass)', price: 'Rp 27.000' },
             { amount: '300 Robux (Gamepass)', price: 'Rp 40.000' },
