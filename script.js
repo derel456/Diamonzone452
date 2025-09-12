@@ -244,14 +244,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 gameLogo.src = gameInfo.logo;
                 nominalGrid.innerHTML = '';
                 selectedNominal = null;
-                
+
                 gameInfo.nominals.forEach(nominal => {
                     const btn = document.createElement('button');
                     btn.className = 'nominal-btn';
                     btn.innerHTML = `<span class="block text-lg font-bold">${nominal.value}</span><span class="block text-sm text-gray-400">${nominal.price}</span>`;
                     btn.dataset.value = nominal.value;
                     btn.dataset.price = nominal.price;
-                    
+
                     btn.addEventListener('click', () => {
                         // Remove 'selected' class from all buttons
                         nominalGrid.querySelectorAll('.nominal-btn').forEach(b => b.classList.remove('selected'));
@@ -259,7 +259,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         btn.classList.add('selected');
                         selectedNominal = nominal;
                     });
-                    
+
                     nominalGrid.appendChild(btn);
                 });
 
@@ -282,7 +282,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const gameName = gameTitle.textContent;
         
         if (!userId || !selectedNominal) {
-            // alert('Mohon masukkan User ID dan pilih nominal terlebih dahulu.');
             // Using a custom message box instead of alert()
             const messageBox = document.createElement('div');
             messageBox.className = 'fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-red-600 text-white p-4 rounded-lg shadow-xl z-50';
