@@ -1,85 +1,82 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
-
 body {
     font-family: 'Inter', sans-serif;
-    background: linear-gradient(to right, #1a237e, #424242);
-    color: #f5f5f5;
-}
-
-.container {
-    max-width: 1200px;
+    background-color: #0d1117;
+    color: #e6e6e6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .banner-bg {
-    background: linear-gradient(to right, #1a237e, #fbc02d);
+    background: linear-gradient(to right, #1a202c, #2d3748);
 }
 
 .game-card {
-    background-color: rgba(255, 255, 255, 0.1);
-    transition: transform 0.2s, box-shadow 0.2s;
+    background-color: #1a202c;
     border: 2px solid transparent;
-    border-radius: 1rem;
-    color: #e0e0e0;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 .game-card:hover {
-    transform: translateY(-5px) scale(1.03);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-    border-color: #fbc02d;
-}
-
-.btn-payment {
-    background-color: #fbc02d;
-    color: #1a237e;
-    transition: background-color 0.2s, transform 0.2s;
-}
-
-.btn-payment:hover {
-    background-color: #f9a825;
-    transform: scale(1.02);
+    transform: translateY(-5px) scale(1.02);
+    border-color: #fde047;
 }
 
 .input-field {
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: white;
+    background-color: #2d3748;
+    border: 1px solid #4a5568;
+    color: #fff;
 }
 
-.nominal-item {
-    background-color: rgba(255, 255, 255, 0.1);
+.input-field::placeholder {
+    color: #a0aec0;
+}
+
+.nominal-btn {
+    background-color: #2d3748;
+    color: #fff;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
     border: 2px solid transparent;
-    transition: background-color 0.2s, border-color 0.2s;
+    text-align: center;
 }
 
-.nominal-item.selected {
-    background-color: #fbc02d;
-    border-color: #f9a825;
-    color: #1a237e;
+.nominal-btn.selected {
+    background-color: #fde047;
+    color: #000;
+    font-weight: bold;
+    border-color: #fbbf24;
 }
 
-#mobile-menu {
-    transition: transform 0.3s ease-in-out;
+.nominal-btn:hover:not(.selected) {
+    transform: translateY(-2px);
+    border-color: #fde047;
 }
 
-/* New styles for the new design */
-.popular-games-section {
-    background: linear-gradient(to right, #1a237e, #fbc02d);
-    border-radius: 1rem;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+.btn-payment {
+    background: linear-gradient(135deg, #fde047, #fbbf24);
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease;
 }
 
-.all-games-section {
-    background: linear-gradient(135deg, #1a237e 0%, #424242 100%);
-    border-radius: 1rem;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+.btn-payment:hover {
+    transform: translateY(-3px) scale(1.02);
 }
 
-.all-games-section .game-card {
-    background-color: rgba(255, 255, 255, 0.1);
+.bg-gray-800 {
+    background-color: #2d3748;
 }
 
-/* Styles for payment page */
-.payment-page-bg {
-    background-color: rgba(66, 66, 66, 0.7);
-    backdrop-filter: blur(10px);
+.bg-gray-900 {
+    background-color: #1a202c;
+}
+
+@media (min-width: 640px) {
+    .mobile-menu-open {
+        transform: translateY(0);
     }
+}
