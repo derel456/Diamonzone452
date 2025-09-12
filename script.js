@@ -1,310 +1,304 @@
-const menuBtn = document.getElementById('menu-btn');
-const mobileMenu = document.getElementById('mobile-menu');
-const mainPage = document.getElementById('main-page');
-const paymentPage = document.getElementById('payment-page');
-const gameCards = document.querySelectorAll('.game-card');
-const backBtn = document.getElementById('back-btn');
-const gameTitle = document.getElementById('game-title');
-const gameLogo = document.getElementById('game-logo');
-const nominalGrid = document.getElementById('nominal-grid');
-const buyNowBtn = document.getElementById('buy-now-btn');
-const userIdInput = document.getElementById('user-id');
-const bannerSlider = document.getElementById('banner-slider');
-const prevBtn = document.getElementById('prev-btn');
-const nextBtn = document.getElementById('next-btn');
+document.addEventListener('DOMContentLoaded', () => {
+    const mobileMenuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mainPage = document.getElementById('main-page');
+    const paymentPage = document.getElementById('payment-page');
+    const backBtn = document.getElementById('back-btn');
+    const gameCards = document.querySelectorAll('.game-card');
+    const gameTitle = document.getElementById('game-title');
+    const gameLogo = document.getElementById('game-logo');
+    const nominalGrid = document.getElementById('nominal-grid');
+    const buyNowBtn = document.getElementById('buy-now-btn');
+    const userIdInput = document.getElementById('user-id');
+    
+    let selectedNominal = null;
 
-let currentIndex = 0;
-const totalBanners = 3;
-
-const games = {
-    "Mobile Legend": {
-        logo: "ml1.jpg",
-        nominals: [
-            { amount: '98 Diamond', price: 'Rp 27.500' },
-            { amount: '170 Diamond', price: 'Rp 46.000' },
-            { amount: '277 Diamond', price: 'Rp 76.000' },
-            { amount: '305 Diamond', price: 'Rp 84.000' },
-            { amount: '518 Diamond', price: 'Rp 142.000' },
-            { amount: '568 Diamond', price: 'Rp 149.500' },
-            { amount: '875 Diamond', price: 'Rp 228.000' },
-            { amount: '1048 Diamond', price: 'Rp 280.000' },
-            { amount: '1067 Diamond', price: 'Rp 285.500' },
-            { amount: 'Wdp', price: 'Rp 28.000' }
-            { amount: '2x Wdp', price: 'Rp 56.000' }
-        ]
-    },
-    "Free Fire": {
-        logo: "ff1.jpg",
-        nominals: [
-            { amount: '5 Diamond', price: 'Rp 1.000' },
-            { amount: '12 Diamond', price: 'Rp 2.000' },
-            { amount: '50 Diamond', price: 'Rp 7.000' },
-            { amount: '70 Diamond', price: 'Rp 9.000' },
-            { amount: '120 Diamond', price: 'Rp 16.000' },
-            { amount: '140 Diamond', price: 'Rp 19.000' },
-            { amount: '355 Diamond', price: 'Rp 46.000' },
-            { amount: '720 Diamond', price: 'Rp 91.000' },
-            { amount: '740 Diamond', price: 'Rp 96.000' },
-            { amount: '800 Diamond', price: 'Rp 101.000' },
-            { amount: '1450 Diamond', price: 'Rp 190.000' },
-            { amount: '2180 Diamond', price: 'Rp 290.000' },
-            { amount: 'Membership mingguan lite', price: 'Rp 15.000' },
-            { amount: 'Membership mingguan biasa', price: 'Rp 30.000' },
-            { amount: 'Membership bulanan', price: 'Rp 82.000' }
-        ]
-    },
-    "Roblox": {
-        logo: "roblox1.jpg",
-        nominals: [
-            { amount: '100 Robux (Biasa)', price: 'Rp 85.000' },
-            { amount: '200 Robux (Biasa)', price: 'Rp 105.000' },
-            { amount: '400 Robux (Biasa)', price: 'Rp 114.000' },
-            { amount: '800 Robux (Biasa)', price: 'Rp 159.000' },
-            { amount: '2000 Robux (Biasa)', price: 'Rp 389.000' },
-            { amount: '100 Robux (Gamepass)', price: 'Rp 14.000' },
-            { amount: '200 Robux (Gamepass)', price: 'Rp 27.000' },
-            { amount: '300 Robux (Gamepass)', price: 'Rp 40.000' },
-            { amount: '400 Robux (Gamepass)', price: 'Rp 54.000' },
-            { amount: '500 Robux (Gamepass)', price: 'Rp 67.000' },
-            { amount: '600 Robux (Gamepass)', price: 'Rp 80.000' },
-            { amount: '700 Robux (Gamepass)', price: 'Rp 93.000' },
-            { amount: '800 Robux (Gamepass)', price: 'Rp 106.000' },
-            { amount: '900 Robux (Gamepass)', price: 'Rp 120.000' },
-            { amount: '1000 Robux (Gamepass)', price: 'Rp 133.000' }
-        ]
-    },
-    "CODM": {
-        logo: "cod1.jpg",
-        nominals: [
-            { amount: '33 Garena shells', price: 'Rp 10.000' },
-            { amount: '66 Garena shells', price: 'Rp 20.000' },
-            { amount: '165 Garena shells', price: 'Rp 50.000' },
-            { amount: '330 Garena shells', price: 'Rp 100.000' }
-        ]
-    },
-    "HOK": {
-        logo: "hok1.jpg",
-        nominals: [
-            { amount: '16 Tokens', price: 'Rp 3.000' },
-            { amount: '80 + 8 Tokens', price: 'Rp 15.000' },
-            { amount: '240 + 17 Tokens', price: 'Rp 44.000' },
-            { amount: '400 + 32 Tokens', price: 'Rp 73.000' },
-            { amount: '560 + 45 Tokens', price: 'Rp 102.000' },
-            { amount: '800 + 95 Tokens', price: 'Rp 146.000' },
-            { amount: '1200 + 153 Tokens', price: 'Rp 220.000' }
-        ]
-    },
-    "Fc Mobile": {
-        logo: "fc1.jpg",
-        nominals: [
-            { amount: '40 FC Point', price: 'Rp 6.500' },
-            { amount: '100 FC Point', price: 'Rp 16.000' },
-            { amount: '520 FC Point', price: 'Rp 78.000' },
-            { amount: '1070 FC Point', price: 'Rp 156.500' },
-            { amount: '2200 FC Point', price: 'Rp 232.500' },
-            { amount: '5750 FC Point', price: 'Rp 785.000' },
-            { amount: '12000 FC Point', price: 'Rp 1.571.000' },
-            { amount: '39 Silver', price: 'Rp 6.500' },
-            { amount: '99 Silver', price: 'Rp 16.000' },
-            { amount: '499 Silver', price: 'Rp 78.000' },
-            { amount: '999 Silver', price: 'Rp 156.500' },
-            { amount: '1999 Silver', price: 'Rp 232.500' },
-            { amount: '4999 Silver', price: 'Rp 785.000' },
-            { amount: '9999 Silver', price: 'Rp 1.571.000' }
-        ]
-    },
-    "Guardian Tales": {
-        logo: "guardian1.jpg",
-        nominals: [
-            { amount: 'Bundle starter s3', price: 'Rp 277.000' },
-            { amount: 'Bundle special costume', price: 'Rp 510.000' },
-            { amount: 'Bundle skip iklan', price: 'Rp 70.000' },
-            { amount: 'Paket special bulanan', price: 'Rp 50.000' }
-        ]
-    },
-    "PUBG": {
-        logo: "pubg1.jpg",
-        nominals: [
-            { amount: '60 UC', price: 'Rp 14.500' },
-            { amount: '120 UC', price: 'Rp 29.000' },
-            { amount: '180 UC', price: 'Rp 43.000' },
-            { amount: '240 UC', price: 'Rp 58.000' },
-            { amount: '325 UC', price: 'Rp 73.991' },
-            { amount: '385 UC', price: 'Rp 87.500' },
-            { amount: '445 UC', price: 'Rp 101.910' },
-            { amount: '505 UC', price: 'Rp 116.500' }
-        ]
-    },
-    "Super Sus": {
-        logo: "super1.jpg",
-        nominals: [
-            { amount: '250 Gem', price: 'Rp 9.000' },
-            { amount: '800 Gem', price: 'Rp 14.000' },
-            { amount: '900 Gem', price: 'Rp 15.000' },
-            { amount: '1800 Gem', price: 'Rp 22.000' },
-            { amount: '5750 Gem', price: 'Rp 52.000' },
-            { amount: '15000 Gem', price: 'Rp 131.000' },
-            { amount: '32000 Gem', price: 'Rp 171.000' },
-            { amount: '120 Token', price: 'Rp 34.000' },
-            { amount: '1300 Token', price: 'Rp 271.000' }
-        ]
-    },
-    "Magic Chess": {
-        logo: "magic1.jpg",
-        nominals: [
-            { amount: '12 Diamond', price: 'Rp 3.000' },
-            { amount: '28 Diamond', price: 'Rp 6.000' },
-            { amount: '44 Diamond', price: 'Rp 9.500' },
-            { amount: '59 Diamond', price: 'Rp 13.000' },
-            { amount: '85 Diamond', price: 'Rp 15.000' },
-            { amount: '170 Diamond', price: 'Rp 36.000' },
-            { amount: '240 Diamond', price: 'Rp 49.000' },
-            { amount: '296 Diamond', price: 'Rp 61.000' },
-            { amount: '408 Diamond', price: 'Rp 82.000' },
-            { amount: '568 Diamond', price: 'Rp 111.000' },
-            { amount: '875 Diamond', price: 'Rp 106.000' },
-            { amount: '2010 Diamond', price: 'Rp 78.000' },
-            { amount: '4830 Diamond', price: 'Rp 57.000' },
-            { amount: 'WDP', price: 'Rp 27.000' }
-        ]
-    },
-    "Genshin Impact": {
-        logo: "genshin1.jpg",
-        nominals: [
-            { amount: '60 Crystal', price: 'Rp 13.000' },
-            { amount: '330 Crystal', price: 'Rp 59.000' },
-            { amount: '1090 Crystal', price: 'Rp 177.000' },
-            { amount: '2240 Crystal', price: 'Rp 381.000' },
-            { amount: 'Blessing of the welkin moon', price: 'Rp 58.000' },
-            { amount: '2x Blessing of the welkin moon', price: 'Rp 116.000' }
-        ]
-    },
-    "Honkai Impact 3": {
-        logo: "honkai1.jpg",
-        nominals: [
-            { amount: '65 Crystal', price: 'Rp 15.000' },
-            { amount: '330 Crystal', price: 'Rp 74.000' },
-            { amount: '710 Crystal', price: 'Rp 160.000' },
-            { amount: '1430 Crystal', price: 'Rp 330.000' },
-            { amount: '30 B-chips', price: 'Rp 8.000' },
-            { amount: '65 B-chips', price: 'Rp 16.000' },
-            { amount: '330 B-chips', price: 'Rp 74.000' },
-            { amount: '990 B-chips', price: 'Rp 227.0.0' }
-        ]
-    },
-    "LOL": {
-        logo: "lol1.jpg",
-        nominals: [
-            { amount: '575 RP', price: 'Rp 58.000' },
-            { amount: '2800 RP', price: 'Rp 267.000' },
-            { amount: '4500 RP', price: 'Rp 423.000' },
-            { amount: '6500 RP', price: 'Rp 595.000' }
-        ]
-    },
-    "Stumble Guys": {
-        logo: "stumble1.jpg",
-        nominals: [
-                { amount: '250 Gems', price: 'Rp 11.000' },
-                { amount: '800 Gems', price: 'Rp 25.000' },
-                { amount: '15000 Gems', price: 'Rp 229.000' }
+    const gameData = {
+        'Mobile Legend': {
+            logo: 'https://placehold.co/1587x2245/312e81/ffffff?text=MLBB',
+            nominals: [
+                { value: '5 diamond', price: 'Rp 5.000' },
+                { value: '14 diamond', price: 'Rp 14.000' },
+                { value: '36 diamond', price: 'Rp 10.000' },
+                { value: '56 diamond', price: 'Rp 15.000' },
+                { value: '71 diamond', price: 'Rp 20.000' },
+                { value: '176 diamond', price: 'Rp 50.000' },
+                { value: '370 diamond', price: 'Rp 100.000' },
+                { value: '1048 diamond', price: 'Rp 280.000' },
+                { value: 'Weekly Diamond Pass', price: 'Rp 27.000' },
+                { value: 'Weekly Diamond Pass x2', price: 'Rp 54.000' }
             ]
-    },
-    "Valorant": {
-        logo: "valo1.jpg",
-        nominals: [
-            { amount: '475 Points', price: 'Rp 55.000' },
-            { amount: '1000 Points', price: 'Rp 112.000' },
-            { amount: '1475 Points', price: 'Rp 162.000' },
-            { amount: '2050 Points', price: 'Rp 214.000' }
-        ]
-    }
-};
+        },
+        'Free Fire': {
+            logo: 'https://placehold.co/1587x2245/dc2626/ffffff?text=Free+Fire',
+            nominals: [
+                { value: '10 diamond', price: 'Rp 1.000' },
+                { value: '30 diamond', price: 'Rp 5.000' },
+                { value: '75 diamond', price: 'Rp 10.000' },
+                { value: '145 diamond', price: 'Rp 20.000' },
+                { value: '375 diamond', price: 'Rp 50.000' },
+                { value: '740 diamond', price: 'Rp 95.000' },
+                { value: '770 diamond', price: 'Rp 100.000' },
+                { value: '800 diamond', price: 'Rp 102.000' },
+                { value: '1.000 diamond', price: 'Rp 127.000' },
+                { value: '2.000 diamond', price: 'Rp 260.000' },
+                { value: 'Membership Mingguan', price: 'Rp 28.000' },
+                { value: 'Membership Bulanan', price: 'Rp 82.000' }
+            ]
+        },
+        'Roblox': {
+            logo: 'https://placehold.co/1587x2245/2563eb/ffffff?text=Roblox',
+            nominals: [
+                { value: '100 Robux', price: 'Rp 86.000' },
+                { value: '200 Robux', price: 'Rp 106.000' },
+                { value: '400 Robux', price: 'Rp 115.000' },
+                { value: '800 Robux', price: 'Rp 160.000' },
+                { value: '2000 Robux', price: 'Rp 390.000' }
+            ]
+        },
+        'CODM': {
+            logo: 'https://placehold.co/1587x2245/1f2937/ffffff?text=CODM',
+            nominals: [
+                { value: '33 Garena Shells', price: 'Rp 10.000' },
+                { value: '66 Garena Shells', price: 'Rp 20.000' },
+                { value: '165 Garena Shells', price: 'Rp 50.000' },
+                { value: '330 Garena Shells', price: 'Rp 100.000' }
+            ]
+        },
+        'HOK': {
+            logo: 'https://placehold.co/1587x2245/991b1b/ffffff?text=HOK',
+            nominals: [
+                { value: '16 Tokens', price: 'Rp 3.000' },
+                { value: '80 + 8 Tokens', price: 'Rp 15.000' },
+                { value: '240 + 17 Tokens', price: 'Rp 44.000' },
+                { value: '400 + 32 Tokens', price: 'Rp 73.000' },
+                { value: '560 + 45 Tokens', price: 'Rp 102.000' },
+                { value: '800 + 95 Tokens', price: 'Rp 146.000' },
+                { value: '1200 + 153 Tokens', price: 'Rp 220.000' }
+            ]
+        },
+        'FC Mobile': {
+            logo: 'https://placehold.co/1587x2245/16a34a/ffffff?text=FC+Mobile',
+            nominals: [
+                { value: '40 FC Point', price: 'Rp 6.500' },
+                { value: '100 FC Point', price: 'Rp 16.000' },
+                { value: '520 FC Point', price: 'Rp 78.000' },
+                { value: '1070 FC Point', price: 'Rp 156.500' },
+                { value: '2200 FC Point', price: 'Rp 232.500' },
+                { value: '5750 FC Point', price: 'Rp 785.000' },
+                { value: '12000 FC Point', price: 'Rp 1.571.000' },
+                { value: '39 Silver', price: 'Rp 6.500' },
+                { value: '99 Silver', price: 'Rp 16.000' },
+                { value: '499 Silver', price: 'Rp 78.000' },
+                { value: '999 Silver', price: 'Rp 156.500' },
+                { value: '1999 Silver', price: 'Rp 232.500' },
+                { value: '4999 Silver', price: 'Rp 785.000' },
+                { value: '9999 Silver', price: 'Rp 1.571.000' }
+            ]
+        },
+        'Guardian Tales': {
+            logo: 'https://placehold.co/1587x2245/f59e0b/ffffff?text=Guardian+Tales',
+            nominals: [
+                { value: 'Bundle Starter S3', price: 'Rp 277.000' },
+                { value: 'Bundle Special Costume', price: 'Rp 510.000' },
+                { value: 'Bundle Skip Iklan', price: 'Rp 70.000' },
+                { value: 'Paket Special Bulanan', price: 'Rp 50.000' }
+            ]
+        },
+        'PUBG': {
+            logo: 'https://placehold.co/1587x2245/334155/ffffff?text=PUBG',
+            nominals: [
+                { value: '60 UC', price: 'Rp 14.500' },
+                { value: '120 UC', price: 'Rp 29.000' },
+                { value: '180 UC', price: 'Rp 43.000' },
+                { value: '240 UC', price: 'Rp 58.000' },
+                { value: '325 UC', price: 'Rp 73.991' },
+                { value: '385 UC', price: 'Rp 87.500' },
+                { value: '445 UC', price: 'Rp 101.910' },
+                { value: '505 UC', price: 'Rp 116.500' }
+            ]
+        },
+        'Genshin Impact': {
+            logo: 'https://placehold.co/1587x2245/6b21a8/ffffff?text=Genshin',
+            nominals: [
+                { value: '60 Genesis Crystals', price: 'Rp 13.000' },
+                { value: '330 Genesis Crystals', price: 'Rp 59.000' },
+                { value: '1090 Genesis Crystals (980 +110)', price: 'Rp 177.000' },
+                { value: '2240 Genesis Crystals (1980 + 260)', price: 'Rp 381.000' },
+                { value: 'Blessing of the Welkin Moon', price: 'Rp 58.000' },
+                { value: 'Blessing of the Welkin Moon x2', price: 'Rp 116.000' }
+            ]
+        },
+        'Super Sus': {
+            logo: 'https://placehold.co/1587x2245/065f46/ffffff?text=Super+Sus',
+            nominals: [
+                { value: '250 Gems', price: 'Rp 9.000' },
+                { value: '800 Gems', price: 'Rp 14.000' },
+                { value: '900 Gems', price: 'Rp 15.000' },
+                { value: '1800 Gems', price: 'Rp 22.000' },
+                { value: '5750 Gems', price: 'Rp 52.000' },
+                { value: '15000 Gems', price: 'Rp 131.000' },
+                { value: '32000 Gems', price: 'Rp 171.000' },
+                { value: '120 Tokens', price: 'Rp 34.000' },
+                { value: '1300 Tokens', price: 'Rp 271.000' }
+            ]
+        },
+        'Magic Chess': {
+            logo: 'https://placehold.co/1587x2245/94a3b8/ffffff?text=Magic+Chess',
+            nominals: [
+                { value: '12 Diamond', price: 'Rp 3.000' },
+                { value: '28 diamond', price: 'Rp 6.000' },
+                { value: '44 diamond', price: 'Rp 9.500' },
+                { value: '59 diamond', price: 'Rp 13.000' },
+                { value: '85 diamond', price: 'Rp 15.000' },
+                { value: '170 diamond', price: 'Rp 36.000' },
+                { value: '240 diamond', price: 'Rp 49.000' },
+                { value: '296 diamond', price: 'Rp 61.000' },
+                { value: '408 diamond', price: 'Rp 82.000' },
+                { value: '568 diamond', price: 'Rp 111.000' },
+                { value: '875 diamond', price: 'Rp 106.000' },
+                { value: '2010 diamond', price: 'Rp 78.000' },
+                { value: '4830 diamond', price: 'Rp 57.000' },
+                { value: 'Weekly Diamond Pass', price: 'Rp 27.000' }
+            ]
+        },
+        'Honkai Impact 3': {
+            logo: 'https://placehold.co/1587x2245/be185d/ffffff?text=Honkai+3',
+            nominals: [
+                { value: '65 Crystal', price: 'Rp 15.000' },
+                { value: '330 Crystal', price: 'Rp 74.000' },
+                { value: '710 Crystal', price: 'Rp 160.000' },
+                { value: '1430 Crystal', price: 'Rp 330.000' },
+                { value: '30 B-chips', price: 'Rp 8.000' },
+                { value: '65 B-chips', price: 'Rp 16.000' },
+                { value: '330 B-chips', price: 'Rp 74.000' },
+                { value: '990 B-chips', price: 'Rp 227.000' }
+            ]
+        },
+        'LOL': {
+            logo: 'https://placehold.co/1587x2245/5b21b6/ffffff?text=LOL',
+            nominals: [
+                { value: '575 RP', price: 'Rp 58.000' },
+                { value: '2800 RP', price: 'Rp 267.000' },
+                { value: '4500 RP', price: 'Rp 423.000' },
+                { value: '6500 RP', price: 'Rp 595.000' }
+            ]
+        },
+        'Stumble Guys': {
+            logo: 'https://placehold.co/1587x2245/fde047/000000?text=Stumble+Guys',
+            nominals: [
+                { value: '250 Gems', price: 'Rp 11.000' },
+                { value: '800 Gems', price: 'Rp 25.000' },
+                { value: '15000 Gems', price: 'Rp 229.000' }
+            ]
+        },
+        'Valorant': {
+            logo: 'https://placehold.co/1587x2245/991b1b/ffffff?text=Valorant',
+            nominals: [
+                { value: '475 Points', price: 'Rp 55.000' },
+                { value: '1000 Points', price: 'Rp 112.000' },
+                { value: '1475 Points', price: 'Rp 162.000' },
+                { value: '2050 Points', price: 'Rp 214.000' }
+            ]
+        },
+    };
 
-menuBtn.addEventListener('click', () => {
-    mobileMenu.classList.toggle('-translate-y-full');
-});
-
-mobileMenu.addEventListener('click', (e) => {
-    if (e.target.tagName === 'A') {
-        mobileMenu.classList.add('-translate-y-full');
-    }
-});
-
-function updateSlider() {
-    bannerSlider.style.transform = `translateX(${-currentIndex * 100}%)`;
-}
-
-prevBtn.addEventListener('click', () => {
-    currentIndex = (currentIndex > 0) ? currentIndex - 1 : totalBanners - 1;
-    updateSlider();
-});
-
-nextBtn.addEventListener('click', () => {
-    currentIndex = (currentIndex < totalBanners - 1) ? currentIndex + 1 : 0;
-    updateSlider();
-});
-
-gameCards.forEach(card => {
-    card.addEventListener('click', () => {
-        const gameName = card.dataset.game;
-        const gameData = games[gameName];
-
-        if (gameData) {
-            gameTitle.textContent = gameName.toUpperCase();
-            gameLogo.src = gameData.logo;
-            gameLogo.alt = gameName + " Logo";
-            
-            nominalGrid.innerHTML = '';
-            gameData.nominals.forEach(nominal => {
-                const div = document.createElement('div');
-                div.className = 'nominal-item p-4 rounded-lg text-center cursor-pointer hover:bg-opacity-80 transition-colors duration-200';
-                div.innerHTML = `
-                    <p class="font-bold text-base sm:text-lg">${nominal.amount}</p>
-                    <p class="text-sm text-gray-400">${nominal.price}</p>
-                `;
-                div.dataset.amount = nominal.amount;
-                div.dataset.price = nominal.price;
-                nominalGrid.appendChild(div);
-            });
-
-            document.querySelectorAll('.nominal-item').forEach(item => {
-                item.addEventListener('click', () => {
-                    document.querySelectorAll('.nominal-item').forEach(el => el.classList.remove('selected'));
-                    item.classList.add('selected');
-                });
-            });
-
-            mainPage.classList.add('hidden');
-            paymentPage.classList.remove('hidden');
-        }
+    // Mobile Menu Toggle
+    mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('-translate-y-full');
     });
-});
 
-backBtn.addEventListener('click', () => {
-    paymentPage.classList.add('hidden');
-    mainPage.classList.remove('hidden');
-    userIdInput.value = '';
-});
+    // Banner Slider
+    const bannerSlider = document.getElementById('banner-slider');
+    const bannerImages = bannerSlider.querySelectorAll('img');
+    let currentIndex = 0;
 
-buyNowBtn.addEventListener('click', () => {
-    const userId = userIdInput.value;
-    const selectedNominal = document.querySelector('.nominal-item.selected');
+    const updateSlider = () => {
+        bannerSlider.style.transform = `translateX(-${currentIndex * 100}%)`;
+    };
 
-    if (!userId) {
-        alert('Mohon masukkan User ID Anda.');
-        return;
-    }
+    document.getElementById('next-btn').addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % bannerImages.length;
+        updateSlider();
+    });
 
-    if (!selectedNominal) {
-        alert('Mohon pilih nominal top up.');
-        return;
-    }
+    document.getElementById('prev-btn').addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + bannerImages.length) % bannerImages.length;
+        updateSlider();
+    });
 
-    const amount = selectedNominal.dataset.amount;
-    const price = selectedNominal.dataset.price;
-    const gameName = gameTitle.textContent;
+    setInterval(() => {
+        currentIndex = (currentIndex + 1) % bannerImages.length;
+        updateSlider();
+    }, 5000);
 
-    const message = `Halo, saya ingin top up ${amount} untuk game ${gameName} dengan harga ${price}. User ID saya: ${userId}.`;
-    const whatsappUrl = `https://wa.me/6281410545261?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank');
+    // Game Card Click Handler
+    gameCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const gameName = card.dataset.game;
+            const gameInfo = gameData[gameName];
+
+            if (gameInfo) {
+                // Set data for payment page
+                gameTitle.textContent = gameName;
+                gameLogo.src = gameInfo.logo;
+                nominalGrid.innerHTML = '';
+                selectedNominal = null;
+                
+                gameInfo.nominals.forEach(nominal => {
+                    const btn = document.createElement('button');
+                    btn.className = 'nominal-btn';
+                    btn.innerHTML = `<span class="block text-lg font-bold">${nominal.value}</span><span class="block text-sm text-gray-400">${nominal.price}</span>`;
+                    btn.dataset.value = nominal.value;
+                    btn.dataset.price = nominal.price;
+                    
+                    btn.addEventListener('click', () => {
+                        // Remove 'selected' class from all buttons
+                        nominalGrid.querySelectorAll('.nominal-btn').forEach(b => b.classList.remove('selected'));
+                        // Add 'selected' class to the clicked button
+                        btn.classList.add('selected');
+                        selectedNominal = nominal;
+                    });
+                    
+                    nominalGrid.appendChild(btn);
+                });
+
+                // Show payment page and hide main page
+                mainPage.classList.add('hidden');
+                paymentPage.classList.remove('hidden');
+            }
+        });
+    });
+
+    // Back button handler
+    backBtn.addEventListener('click', () => {
+        paymentPage.classList.add('hidden');
+        mainPage.classList.remove('hidden');
+    });
+
+    // Buy Now button handler
+    buyNowBtn.addEventListener('click', () => {
+        const userId = userIdInput.value;
+        const gameName = gameTitle.textContent;
+        
+        if (!userId || !selectedNominal) {
+            // alert('Mohon masukkan User ID dan pilih nominal terlebih dahulu.');
+            // Using a custom message box instead of alert()
+            const messageBox = document.createElement('div');
+            messageBox.className = 'fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-red-600 text-white p-4 rounded-lg shadow-xl z-50';
+            messageBox.textContent = 'Mohon masukkan User ID dan pilih nominal terlebih dahulu.';
+            document.body.appendChild(messageBox);
+            setTimeout(() => {
+                messageBox.remove();
+            }, 3000); // Hapus pesan setelah 3 detik
+            return;
+        }
+        
+        const message = `Halo Diamond Zone, saya ingin top up game ${gameName} dengan detail:\nUser ID: ${userId}\nNominal: ${selectedNominal.value}\nHarga: ${selectedNominal.price}\n\nMohon bantuannya. Terima kasih!`;
+        
+        const encodedMessage = encodeURIComponent(message);
+        const whatsappUrl = `https://wa.me/6281234567890?text=${encodedMessage}`;
+        
+        window.open(whatsappUrl, '_blank');
+    });
 });
