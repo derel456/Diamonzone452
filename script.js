@@ -17,8 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
         'Mobile Legend': {
             logo: 'https://placehold.co/1587x2245/312e81/ffffff?text=MLBB',
             nominals: [
-                { value: '5 diamond', price: 'Rp 5.000' },
-                { value: '14 diamond', price: 'Rp 14.000' },
+                { value: '5 diamond', price: 'Rp 1.000' },
+                { value: '14 diamond', price: 'Rp 3.000' },
                 { value: '36 diamond', price: 'Rp 10.000' },
                 { value: '56 diamond', price: 'Rp 15.000' },
                 { value: '71 diamond', price: 'Rp 20.000' },
