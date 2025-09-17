@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const gameData = {
         'Mobile Legend': {
-            logo: 'https://placehold.co/1587x2245/312e81/ffffff?text=MLBB',
+            logo: 'ml.jpg',
             nominals: [
                 { value: '5 diamond', price: 'Rp 1.000' },
                 { value: '14 diamond', price: 'Rp 3.000' },
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ]
         },
         'Free Fire': {
-            logo: 'https://placehold.co/1587x2245/dc2626/ffffff?text=Free+Fire',
+            logo: 'ff1.jpg',
             nominals: [
                 { value: '10 diamond', price: 'Rp 1.000' },
                 { value: '30 diamond', price: 'Rp 5.000' },
@@ -47,17 +47,17 @@ document.addEventListener('DOMContentLoaded', () => {
             ]
         },
         'Roblox': {
-            logo: 'https://placehold.co/1587x2245/2563eb/ffffff?text=Roblox',
+            logo: 'roblox1.jpg',
             nominals: [
-                { value: '100 Robux', price: 'Rp 86.000' },
-                { value: '200 Robux', price: 'Rp 106.000' },
-                { value: '400 Robux', price: 'Rp 115.000' },
-                { value: '800 Robux', price: 'Rp 160.000' },
-                { value: '2000 Robux', price: 'Rp 390.000' }
+                { value: '160 Robux', price: 'Rp 34.000' },
+                { value: '200 Robux', price: 'Rp 63.000' },
+                { value: '400 Robux', price: 'Rp 76.000' },
+                { value: '800 Robux', price: 'Rp 154.000' },
+                { value: '2100 Robux', price: 'Rp 314.000' }
             ]
         },
         'CODM': {
-            logo: 'https://placehold.co/1587x2245/1f2937/ffffff?text=CODM',
+            logo: 'cod1. jpg',
             nominals: [
                 { value: '33 Garena Shells', price: 'Rp 10.000' },
                 { value: '66 Garena Shells', price: 'Rp 20.000' },
@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ]
         },
         'HOK': {
-            logo: 'https://placehold.co/1587x2245/991b1b/ffffff?text=HOK',
+            logo: 'hok1.jpg',
             nominals: [
                 { value: '16 Tokens', price: 'Rp 3.000' },
                 { value: '80 + 8 Tokens', price: 'Rp 15.000' },
@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ]
         },
         'FC Mobile': {
-            logo: 'https://placehold.co/1587x2245/16a34a/ffffff?text=FC+Mobile',
+            logo: 'fc1.jpg',
             nominals: [
                 { value: '40 FC Point', price: 'Rp 6.500' },
                 { value: '100 FC Point', price: 'Rp 16.000' },
@@ -97,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ]
         },
         'Guardian Tales': {
-            logo: 'https://placehold.co/1587x2245/f59e0b/ffffff?text=Guardian+Tales',
+            logo: 'guardian1.jpg',
             nominals: [
                 { value: 'Bundle Starter S3', price: 'Rp 277.000' },
                 { value: 'Bundle Special Costume', price: 'Rp 510.000' },
@@ -106,7 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ]
         },
         'PUBG': {
-            logo: 'https://placehold.co/1587x2245/334155/ffffff?text=PUBG',
+            logo: 'pubg1.jpg',
             nominals: [
                 { value: '60 UC', price: 'Rp 14.500' },
                 { value: '120 UC', price: 'Rp 29.000' },
@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ]
         },
         'Genshin Impact': {
-            logo: 'https://placehold.co/1587x2245/6b21a8/ffffff?text=Genshin',
+            logo: 'genshin1.jpg',
             nominals: [
                 { value: '60 Genesis Crystals', price: 'Rp 13.000' },
                 { value: '330 Genesis Crystals', price: 'Rp 59.000' },
@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ]
         },
         'Super Sus': {
-            logo: 'https://placehold.co/1587x2245/065f46/ffffff?text=Super+Sus',
+            logo: 'super1.jpg',
             nominals: [
                 { value: '250 Gems', price: 'Rp 9.000' },
                 { value: '800 Gems', price: 'Rp 14.000' },
@@ -144,7 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ]
         },
         'Magic Chess': {
-            logo: 'https://placehold.co/1587x2245/94a3b8/ffffff?text=Magic+Chess',
+            logo: 'magic1.jpg',
             nominals: [
                 { value: '12 Diamond', price: 'Rp 3.000' },
                 { value: '28 diamond', price: 'Rp 6.000' },
@@ -163,7 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ]
         },
         'Honkai Impact 3': {
-            logo: 'https://placehold.co/1587x2245/be185d/ffffff?text=Honkai+3',
+            logo: 'genshin1. jpg',
             nominals: [
                 { value: '65 Crystal', price: 'Rp 15.000' },
                 { value: '330 Crystal', price: 'Rp 74.000' },
@@ -176,7 +176,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ]
         },
         'LOL': {
-            logo: 'https://placehold.co/1587x2245/5b21b6/ffffff?text=LOL',
+            logo: 'lol1.jpg',
             nominals: [
                 { value: '575 RP', price: 'Rp 58.000' },
                 { value: '2800 RP', price: 'Rp 267.000' },
@@ -185,7 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ]
         },
         'Stumble Guys': {
-            logo: 'https://placehold.co/1587x2245/fde047/000000?text=Stumble+Guys',
+            logo: 'stumble1.jpg',
             nominals: [
                 { value: '250 Gems', price: 'Rp 11.000' },
                 { value: '800 Gems', price: 'Rp 25.000' },
@@ -193,7 +193,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ]
         },
         'Valorant': {
-            logo: 'https://placehold.co/1587x2245/991b1b/ffffff?text=Valorant',
+            logo: 'valorant1.jpg',
             nominals: [
                 { value: '475 Points', price: 'Rp 55.000' },
                 { value: '1000 Points', price: 'Rp 112.000' },
