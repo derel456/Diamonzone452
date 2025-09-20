@@ -1,14 +1,57 @@
 body {
     font-family: 'Inter', sans-serif;
     background-color: #0d1117;
+    background-image: linear-gradient(135deg, #1f2937 0%, #374151 50%, #1f2937 100%);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
     color: #e6e6e6;
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
 .banner-bg {
-    background: linear-gradient(to right, #1a202c, #2d3748);
+    background: linear-gradient(to right, #1f2937, #374151);
+}
+
+.nav-link {
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #fde047;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.menu-item {
+    transition: background-color 0.3s ease;
+}
+
+.menu-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .game-card {
