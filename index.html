@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body class="p-4 sm:p-8">
 
@@ -16,9 +17,9 @@
     <nav class="container mx-auto py-4 flex justify-between items-center relative z-20">
         <h1 class="text-2xl sm:text-3xl font-bold text-white uppercase">Diamond Zone</h1>
         <div class="hidden sm:flex space-x-6 text-gray-300">
-            <a href="#how-to-buy" class="hover:text-white transition-colors">CARA PEMBELIAN</a>
-            <a href="#about-us" class="hover:text-white transition-colors">TENTANG KAMI</a>
-            <a href="#social-media" class="hover:text-white transition-colors">MEDIA SOSIAL</a>
+            <a href="#how-to-buy" class="hover:text-white transition-colors nav-link">CARA PEMBELIAN</a>
+            <a href="#about-us" class="hover:text-white transition-colors nav-link">TENTANG KAMI</a>
+            <a href="#social-media" class="hover:text-white transition-colors nav-link">MEDIA SOSIAL</a>
         </div>
         <div class="sm:hidden">
             <button id="menu-btn" class="text-white focus:outline-none">
@@ -31,9 +32,9 @@
 
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="fixed top-0 left-0 w-full h-screen bg-gray-900 bg-opacity-95 p-8 pt-24 space-y-4 text-center text-gray-300 transform -translate-y-full z-10">
-        <a href="#how-to-buy" class="block py-2 hover:text-white uppercase">Cara Pembelian</a>
-        <a href="#about-us" class="block py-2 hover:text-white uppercase">Tentang Kami</a>
-        <a href="#social-media" class="block py-2 hover:text-white uppercase">Media Sosial</a>
+        <a href="#how-to-buy" class="block py-2 hover:text-white uppercase menu-item">Cara Pembelian</a>
+        <a href="#about-us" class="block py-2 hover:text-white uppercase menu-item">Tentang Kami</a>
+        <a href="#social-media" class="block py-2 hover:text-white uppercase menu-item">Media Sosial</a>
     </div>
 
     <!-- Main Page -->
@@ -43,8 +44,8 @@
             <div id="banner-slider" class="flex transition-transform duration-500">
                 <img src="img1.jpg" alt="Banner 1" class="w-full flex-shrink-0 object-cover">
                 <img src="ben2.jpg" alt="Banner 2" class="w-full flex-shrink-0 object-cover">
-                <img src="ben4.jpg" alt="Banner 3" class="w-full flex-shrink-0 object-cover">
-         </div>
+                <img src="ben4.jpg" alt="Banner 1" class="w-full flex-shrink-0 object-cover">
+            </div>
             <button id="prev-btn" class="absolute top-1/2 left-4 -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 transition-colors">&lt;</button>
             <button id="next-btn" class="absolute top-1/2 right-4 -translate-y-1/2 bg-gray-800 bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-75 transition-colors">&gt;</button>
         </div>
@@ -54,7 +55,7 @@
                 <h2 class="text-white text-2xl font-bold mb-4 uppercase text-center sm:text-left">POPULER SEKARANG</h2>
                 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
                     <div class="game-card p-2 rounded-xl text-center cursor-pointer" data-game="Mobile Legend">
-                        <img src="ml.jpg" class="w-full h-auto rounded-lg mb-2">
+                        <img src="ml.jpg" alt="Mobile Legend" class="w-full h-auto rounded-lg mb-2">
                         <p class="font-semibold text-sm sm:text-base text-white">Mobile Legend</p>
                     </div>
                     <div class="game-card p-2 rounded-xl text-center cursor-pointer" data-game="Free Fire">
@@ -62,7 +63,7 @@
                         <p class="font-semibold text-sm sm:text-base text-white">Free Fire</p>
                     </div>
                     <div class="game-card p-2 rounded-xl text-center cursor-pointer" data-game="Roblox">
-                        <img src="roblox.jpg" alt="Roblox" class="w-full h-auto rounded-lg mb-2">
+                        <img src="roblox.jpg" class="w-full h-auto rounded-lg mb-2">
                         <p class="font-semibold text-sm sm:text-base text-white">Roblox</p>
                     </div>
                 </div>
@@ -75,11 +76,11 @@
                 <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
                     <!-- Game Cards -->
                     <div class="game-card p-2 rounded-xl text-center cursor-pointer" data-game="Mobile Legend">
-                        <img src="ml.jpg" alt="Mobile Legend" class="w-full h-auto rounded-lg mb-2">
+                        <img src="ml.jpg" class="w-full h-auto rounded-lg mb-2">
                         <p class="font-semibold text-sm sm:text-base text-white">Mobile Legend</p>
                     </div>
                     <div class="game-card p-2 rounded-xl text-center cursor-pointer" data-game="Free Fire">
-                        <img src="ff.jpg" alt="Free Fire" class="w-full h-auto rounded-lg mb-2">
+                        <img src="ff.jpg" class="w-full h-auto rounded-lg mb-2">
                         <p class="font-semibold text-sm sm:text-base text-white">Free Fire</p>
                     </div>
                     <div class="game-card p-2 rounded-xl text-center cursor-pointer" data-game="Roblox">
@@ -131,33 +132,43 @@
                         <p class="font-semibold text-sm sm:text-base text-white">Stumble Guys</p>
                     </div>
                     <div class="game-card p-2 rounded-xl text-center cursor-pointer" data-game="Valorant">
-                        <img src="valorant.jpg" alt="Valorant" class="w-full h-auto rounded-lg mb-2">
+                        <img src="valorant.jpg" class="w-full h-auto rounded-lg mb-2">
                         <p class="font-semibold text-sm sm:text-base text-white">Valorant</p>
                     </div>
                 </div>
             </div>
         </div>
         
-        <!-- Teks dengan daftar game lengkap -->
-        <div class="container mx-auto mt-8 text-center text-gray-300">
-            <p class="font-semibold text-lg mb-2">Daftar Semua Game</p>
-            <p>
-                <a href="#" class="text-blue-200 hover:underline">Mobile Legend</a> •
-                <a href="#" class="text-blue-200 hover:underline">Free Fire</a> •
-                <a href="#" class="text-blue-200 hover:underline">Roblox</a> •
-                <a href="#" class="text-blue-200 hover:underline">CODM</a> •
-                <a href="#" class="text-blue-200 hover:underline">HOK</a> •
-                <a href="#" class="text-blue-200 hover:underline">Guardian Tales</a> •
-                <a href="#" class="text-blue-200 hover:underline">PUBG</a> •
-                <a href="#" class="text-blue-200 hover:underline">Genshin Impact</a> •
-                <a href="#" class="text-blue-200 hover:underline">Super Sus</a> •
-                <a href="#" class="text-blue-200 hover:underline">Magic Chess</a> •
-                <a href="#" class="text-blue-200 hover:underline">Honkai Impact 3</a> •
-                <a href="#" class="text-blue-200 hover:underline">LOL</a> •
-                <a href="#" class="text-blue-200 hover:underline">Stumble Guys</a> •
-                <a href="#" class="text-blue-200 hover:underline">Valorant</a> •
-                <a href="#" class="text-blue-200 hover:underline">FC Mobile</a>
-            </p>
+        <!-- Content below games -->
+        <div class="container mx-auto py-16 text-gray-300 space-y-12">
+            <div id="how-to-buy" class="bg-gray-800 bg-opacity-70 p-6 sm:p-8 rounded-2xl shadow-lg border border-yellow-400 backdrop-blur-lg">
+                <h2 class="text-3xl font-bold text-white mb-4 uppercase">Cara Pembelian</h2>
+                <p>1. Pilih game yang ingin di-top up dari daftar di atas.</p>
+                <p>2. Masukkan User ID dan Server (jika ada) Anda.</p>
+                <p>3. Pilih nominal diamond/item yang Anda inginkan.</p>
+                <p>4. Klik tombol "Pesan Sekarang" dan Anda akan diarahkan ke WhatsApp untuk menyelesaikan pembayaran.</p>
+            </div>
+            
+            <div id="about-us" class="bg-gray-800 bg-opacity-70 p-6 sm:p-8 rounded-2xl shadow-lg border border-yellow-400 backdrop-blur-lg">
+                <h2 class="text-3xl font-bold text-white mb-4 uppercase">Tentang Kami</h2>
+                <p>Diamond Zone adalah platform terpercaya untuk top up berbagai game populer. Kami berkomitmen untuk menyediakan layanan yang cepat, aman, dan harga yang terjangkau bagi para gamer di seluruh Indonesia.</p>
+            </div>
+
+            <div id="social-media" class="bg-gray-800 bg-opacity-70 p-6 sm:p-8 rounded-2xl shadow-lg border border-yellow-400 backdrop-blur-lg">
+                <h2 class="text-3xl font-bold text-white mb-4 uppercase">Media Sosial Kami</h2>
+                <p>Ikuti kami di media sosial untuk mendapatkan informasi terbaru, promo, dan giveaway! </p>
+                <div class="flex space-x-4 mt-4 text-white">
+                    <a href="https://www.tiktok.com/@diamond.zone4" class="text-2xl hover:text-gray-400 transition-colors" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 448 512" fill="currentColor"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M448,209.91a210.05,210.05,0,0,1-1.22-38.64c.18-51.52-25.79-79.3-51.46-81.56-11.85-.75-23.77-.35-35.33,1.64-15.65,2.62-31.53,6.29-46.52,10.74-21.43,6.38-40.48,15-58.62,24.47-19.12,9.91-38.3,20.89-56.57,32.8-19.14,12.44-38.31,26.46-56.6,41.93-18.4,15.42-36.85,31.22-54.79,48.24-17.91,17-35.53,34.82-52.55,52.88-16.92,18-33.39,36.57-49.37,55.51-15.93,18.91-31.32,38.32-46.21,57.91-14.88,19.56-29.28,39.69-43.19,60.25-13.88,20.57-27.42,41.52-40.38,62.83-12.89,21.36-25.29,42.85-37.15,64.67-11.83,21.84-23.16,43.76-33.82,65.91-10.6,22.19-20.5,44.59-29.74,67.24-9.2,22.68-17.75,45.54-25.6,68.61-7.8,23.1-15.11,46.28-21.64,69.57-6.5,23.3-12.6,46.68-18.23,70.19-5.6,23.51-10.82,47.07-15.54,70.68a210.15,210.15,0,0,1-1.22-38.64c-.18-51.52,25.79-79.3,51.46-81.56,11.85-.75,23.77-.35,35.33,1.64,15.65,2.62,31.53,6.29,46.52,10.74,21.43,6.38,40.48,15,58.62,24.47,19.12,9.91,38.3,20.89,56.57,32.8,19.14,12.44,38.31,26.46,56.6,41.93,18.4,15.42,36.85,31.22,54.79,48.24,17.91,17,35.53,34.82,52.55,52.88,16.92,18,33.39,36.57,49.37,55.51,15.93,18.91,31.32,38.32,46.21,57.91-14.88,19.56-29.28,39.69-43.19,60.25-13.88,20.57-27.42,41.52-40.38,62.83-12.89,21.36-25.29,42.85-37.15,64.67-11.83,21.84-23.16,43.76-33.82,65.91-10.6,22.19-20.5,44.59-29.74,67.24-9.2,22.68-17.75,45.54-25.6,68.61-7.8,23.1-15.11,46.28-21.64,69.57-6.5,23.3-12.6,46.68-18.23,70.19-5.6,23.51-10.82,47.07-15.54,70.68Z"/></svg>
+                    </a>
+                    <a href="https://www.instagram.com/diamond_zone45" class="text-2xl hover:text-gray-400 transition-colors" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 448 512" fill="currentColor"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+                    </a>
+                    <a href="https://www.youtube.com/@diamondzone-k81" class="text-2xl hover:text-gray-400 transition-colors" target="_blank">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 576 512" fill="currentColor"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M549.655,124.083c-6.236-23.744-24.646-42.541-48.423-48.643C456.984,60.677,288,60.677,288,60.677s-168.984,0-213.232,14.763c-23.777,6.102-42.187,24.9-48.423,48.643-14.542,55.143-14.542,291.68,0,346.823,6.237,23.745,24.647,48.424,48.644,44.248,14.763,213.232,14.763,213.232,14.763s168.984,0,213.232-14.763c23.777-6.103,42.187-24.9,48.424-48.644C564.197,415.763,564.197,179.227,549.655,124.083zM288,409.734c-70.528,0-128-57.472-128-128s57.472-128,128-128,128,57.472,128,128-57.472,128-128,128z"/><path d="M403.9,288c0-36.634-29.866-66.5-66.5-66.5s-66.5,29.866-66.5,66.5,29.866,66.5,66.5,66.5,66.5-29.866,66.5-66.5z"/></svg>
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -205,38 +216,6 @@
         </div>
     </div>
     
-    <!-- Content below games -->
-    <div class="container mx-auto py-16 text-gray-300 space-y-12">
-        <div id="how-to-buy" class="bg-gray-800 bg-opacity-70 p-6 sm:p-8 rounded-2xl shadow-lg border border-yellow-400 backdrop-blur-lg">
-            <h2 class="text-3xl font-bold text-white mb-4 uppercase">Cara Pembelian</h2>
-            <p>1. Pilih game yang ingin di-top up dari daftar di atas.</p>
-            <p>2. Masukkan User ID dan Server (jika ada) Anda.</p>
-            <p>3. Pilih nominal diamond/item yang Anda inginkan.</p>
-            <p>4. Klik tombol "Pesan Sekarang" dan Anda akan diarahkan ke WhatsApp untuk menyelesaikan pembayaran.</p>
-        </div>
-        
-        <div id="about-us" class="bg-gray-800 bg-opacity-70 p-6 sm:p-8 rounded-2xl shadow-lg border border-yellow-400 backdrop-blur-lg">
-            <h2 class="text-3xl font-bold text-white mb-4 uppercase">Tentang Kami</h2>
-            <p>Diamond Zone adalah platform terpercaya untuk top up berbagai game populer. Kami berkomitmen untuk menyediakan layanan yang cepat, aman, dan harga yang terjangkau bagi para gamer di seluruh Indonesia.</p>
-        </div>
-
-        <div id="social-media" class="bg-gray-800 bg-opacity-70 p-6 sm:p-8 rounded-2xl shadow-lg border border-yellow-400 backdrop-blur-lg">
-            <h2 class="text-3xl font-bold text-white mb-4 uppercase">Media Sosial Kami</h2>
-            <p>Ikuti kami di media sosial untuk mendapatkan informasi terbaru, promo, dan giveaway! </p>
-            <div class="flex space-x-4 mt-4 text-white">
-                <a href="https://www.tiktok.com/@diamondzone" class="text-2xl hover:text-gray-400 transition-colors" target="_blank">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 448 512" fill="currentColor"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M448,209.91a210.05,210.05,0,0,1-1.22-38.64c.18-51.52-25.79-79.3-51.46-81.56-11.85-.75-23.77-.35-35.33,1.64-15.65,2.62-31.53,6.29-46.52,10.74-21.43,6.38-40.48,15-58.62,24.47-19.12,9.91-38.3,20.89-56.57,32.8-19.14,12.44-38.31,26.46-56.6,41.93-18.4,15.42-36.85,31.22-54.79,48.24-17.91,17-35.53,34.82-52.55,52.88-16.92,18-33.39,36.57-49.37,55.51-15.93,18.91-31.32,38.32-46.21,57.91-14.88,19.56-29.28,39.69-43.19,60.25-13.88,20.57-27.42,41.52-40.38,62.83-12.89,21.36-25.29,42.85-37.15,64.67-11.83,21.84-23.16,43.76-33.82,65.91-10.6,22.19-20.5,44.59-29.74,67.24-9.2,22.68-17.75,45.54-25.6,68.61-7.8,23.1-15.11,46.28-21.64,69.57-6.5,23.3-12.6,46.68-18.23,70.19-5.6,23.51-10.82,47.07-15.54,70.68a210.15,210.15,0,0,1-1.22-38.64c-.18-51.52,25.79-79.3,51.46-81.56,11.85-.75,23.77-.35,35.33,1.64,15.65,2.62,31.53,6.29,46.52,10.74,21.43,6.38,40.48,15,58.62,24.47,19.12,9.91,38.3,20.89,56.57,32.8,19.14,12.44,38.31,26.46,56.6,41.93,18.4,15.42,36.85,31.22,54.79,48.24,17.91,17,35.53,34.82,52.55,52.88,16.92,18,33.39,36.57,49.37,55.51,15.93,18.91,31.32,38.32,46.21,57.91-14.88,19.56-29.28,39.69-43.19,60.25-13.88,20.57-27.42,41.52-40.38,62.83-12.89,21.36-25.29,42.85-37.15,64.67-11.83,21.84-23.16,43.76-33.82,65.91-10.6,22.19-20.5,44.59-29.74,67.24-9.2,22.68-17.75,45.54-25.6,68.61-7.8,23.1-15.11,46.28-21.64,69.57-6.5,23.3-12.6,46.68-18.23,70.19-5.6,23.51-10.82,47.07-15.54,70.68Z"/></svg>
-                </a>
-                <a href="https://www.instagram.com/diamondzone" class="text-2xl hover:text-gray-400 transition-colors" target="_blank">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 448 512" fill="currentColor"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
-                </a>
-                <a href="https://www.youtube.com/@diamondzone" class="text-2xl hover:text-gray-400 transition-colors" target="_blank">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 576 512" fill="currentColor"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M549.655,124.083c-6.236-23.744-24.646-42.541-48.423-48.643C456.984,60.677,288,60.677,288,60.677s-168.984,0-213.232,14.763c-23.777,6.102-42.187,24.9-48.423,48.643-14.542,55.143-14.542,291.68,0,346.823,6.237,23.745,24.647,48.424,48.644,44.248,14.763,213.232,14.763,213.232,14.763s168.984,0,213.232-14.763c23.777-6.103,42.187-24.9,48.424-48.644C564.197,415.763,564.197,179.227,549.655,124.083zM288,409.734c-70.528,0-128-57.472-128-128s57.472-128,128-128,128,57.472,128,128-57.472,128-128,128z"/><path d="M403.9,288c0-36.634-29.866-66.5-66.5-66.5s-66.5,29.866-66.5,66.5,29.866,66.5,66.5,66.5,66.5-29.866,66.5-66.5z"/></svg>
-                </a>
-            </div>
-        </div>
-    </div>
-
     <script src="script.js"></script>
 </body>
 </html>
