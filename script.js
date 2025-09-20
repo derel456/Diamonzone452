@@ -132,15 +132,15 @@ document.addEventListener('DOMContentLoaded', () => {
         'Super Sus': {
             logo: 'super1.jpg',
             nominals: [
-                { value: '250 Gems', price: 'Rp 9.000' },
-                { value: '800 Gems', price: 'Rp 14.000' },
-                { value: '900 Gems', price: 'Rp 15.000' },
-                { value: '1800 Gems', price: 'Rp 22.000' },
-                { value: '5750 Gems', price: 'Rp 52.000' },
-                { value: '15000 Gems', price: 'Rp 131.000' },
-                { value: '32000 Gems', price: 'Rp 171.000' },
-                { value: '120 Tokens', price: 'Rp 34.000' },
-                { value: '1300 Tokens', price: 'Rp 271.000' }
+                { value: '100 golden star', price: 'Rp 11.500' },
+                { value: '310 golden star', price: 'Rp 14.000' },
+                { value: '520 golden star', price: 'Rp 15.000' },
+                { value: '1060 golden star', price: 'Rp 22.000' },
+                { value: '2180 golden star', price: 'Rp 52.000' },
+                { value: '5600 golden star', price: 'Rp 131.000' },
+                { value: 'weakly cardcard', price: 'Rp 11.000' },
+                { value: 'monthly card', price: 'Rp 34.000' },
+                { value: 'super vip card', price: 'Rp 271.000' }
             ]
         },
         'Magic Chess': {
@@ -187,7 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'Stumble Guys': {
             logo: 'stumble1.jpg',
             nominals: [
-                { value: '250 Gems', price: 'Rp 11.000' },
+                { value: '250 Gems', price: 'Rp 12.000' },
                 { value: '800 Gems', price: 'Rp 25.000' },
                 { value: '15000 Gems', price: 'Rp 229.000' }
             ]
