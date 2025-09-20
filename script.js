@@ -296,7 +296,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const message = `Halo Diamond Zone, saya ingin top up game ${gameName} dengan detail:\nUser ID: ${userId}\nNominal: ${selectedNominal.value}\nHarga: ${selectedNominal.price}\n\nMohon bantuannya. Terima kasih!`;
         
         const encodedMessage = encodeURIComponent(message);
-        const whatsappUrl = `https://wa.me/6281234567890?text=${encodedMessage}`;
+        const whatsappUrl = `https://wa.me/6281410545261?text=${encodedMessage}`;
         
         window.open(whatsappUrl, '_blank');
     });
