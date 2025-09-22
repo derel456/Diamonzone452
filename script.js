@@ -133,14 +133,14 @@ document.addEventListener('DOMContentLoaded', () => {
             logo: 'super1.jpg',
             nominals: [
                 { value: '100 golden star', price: 'Rp 11.500' },
-                { value: '310 golden star', price: 'Rp 14.000' },
-                { value: '520 golden star', price: 'Rp 15.000' },
-                { value: '1060 golden star', price: 'Rp 22.000' },
-                { value: '2180 golden star', price: 'Rp 52.000' },
-                { value: '5600 golden star', price: 'Rp 131.000' },
+                { value: '310 golden star', price: 'Rp 33.000' },
+                { value: '520 golden star', price: 'Rp 56.000' },
+                { value: '1060 golden star', price: 'Rp 110.000' },
+                { value: '2180 golden star', price: 'Rp 226.000' },
+                { value: '5600 golden star', price: 'Rp 578.000' },
                 { value: 'weakly cardcard', price: 'Rp 11.000' },
-                { value: 'monthly card', price: 'Rp 34.000' },
-                { value: 'super vip card', price: 'Rp 271.000' }
+                { value: 'monthly card', price: 'Rp 143.000' },
+                { value: 'super vip card', price: 'Rp 161.000' }
             ]
         },
         'Magic Chess': {
