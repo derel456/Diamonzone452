@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
             nominals: [
                 { value: '160 Robux', price: 'Rp 34.000' },
                 { value: '200 Robux', price: 'Rp 63.000' },
-                { value: '400 Robux', price: 'Rp 76.000' },
+                { value: '500 Robux', price: 'Rp 80.000' },
                 { value: '800 Robux', price: 'Rp 154.000' },
                 { value: '2100 Robux', price: 'Rp 314.000' }
             ]
