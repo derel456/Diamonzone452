@@ -17,14 +17,14 @@ document.addEventListener('DOMContentLoaded', () => {
         'Mobile Legend': {
             logo: 'ml.jpg',
             nominals: [
-                { value: '5 diamond', price: 'Rp 1.000' },
-                { value: '14 diamond', price: 'Rp 3.000' },
-                { value: '36 diamond', price: 'Rp 10.000' },
-                { value: '56 diamond', price: 'Rp 15.000' },
-                { value: '71 diamond', price: 'Rp 20.000' },
+                { value: '5 diamond', price: 'Rp 2.000' },
+                { value: '14 diamond', price: 'Rp 5.000' },
+                { value: '30 diamond', price: 'Rp 10.000' },
+                { value: '46 diamond', price: 'Rp 15.000' },
+                { value: '67 diamond', price: 'Rp 20.000' },
                 { value: '176 diamond', price: 'Rp 50.000' },
-                { value: '370 diamond', price: 'Rp 100.000' },
-                { value: '1048 diamond', price: 'Rp 280.000' },
+                { value: '370 diamond', price: 'Rp 100.500' },
+                { value: '874 diamond', price: 'Rp 232.000' },
                 { value: 'Weekly Diamond Pass', price: 'Rp 27.000' },
                 { value: 'Weekly Diamond Pass x2', price: 'Rp 54.000' }
             ]
