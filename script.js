@@ -32,8 +32,8 @@ document.addEventListener('DOMContentLoaded', () => {
         'Free Fire': {
             logo: 'ff1.jpg',
             nominals: [
-                { value: '10 diamond', price: 'Rp 1.000' },
-                { value: '30 diamond', price: 'Rp 5.000' },
+                { value: '10 diamond', price: 'Rp 2.000' },
+                { value: '30 diamond', price: 'Rp 5.500' },
                 { value: '75 diamond', price: 'Rp 10.000' },
                 { value: '145 diamond', price: 'Rp 20.000' },
                 { value: '375 diamond', price: 'Rp 50.000' },
