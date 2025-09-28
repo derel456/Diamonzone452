@@ -25,8 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 { value: '176 diamond', price: 'Rp 50.000' },
                 { value: '370 diamond', price: 'Rp 100.500' },
                 { value: '874 diamond', price: 'Rp 232.000' },
-                { value: 'Weekly Diamond Pass', price: 'Rp 27.000' },
-                { value: 'Weekly Diamond Pass x2', price: 'Rp 54.000' }
+                { value: 'Weekly Diamond Pass', price: 'Rp 28.500' },
+                { value: 'Weekly Diamond Pass x2', price: 'Rp 57.000' }
             ]
         },
         'Free Fire': {
